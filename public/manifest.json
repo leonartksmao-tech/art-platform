@@ -1,0 +1,22 @@
+{
+  "name": "猫猫老师 AI 创作教室",
+  "short_name": "AI创作教室",
+  "description": "央美审美 × AI 工作流 × 创造力训练",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdfaf3",
+  "theme_color": "#6b5ce7",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

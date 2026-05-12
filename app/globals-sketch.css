@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* ====== 手绘素描风格 · Sketch Theme ====== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-sketch);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  /* Core palette — crayon/watercolor inspired */
+  --radius: 0.75rem;
+  --background: #fdfaf3;          /* warm paper */
+  --foreground: oklch(0.18 0.01 80);
+  --card: #fffef9;                /* slightly brighter paper for cards */
+  --card-foreground: oklch(0.2 0.01 80);
+  --primary: oklch(0.48 0.14 265);      /* colored pencil blue */
+  --primary-foreground: #ffffff;
+  --secondary: oklch(0.9 0.04 95);      /* warm beige */
+  --secondary-foreground: oklch(0.35 0.06 60);
+  --muted: #f5f0e5;               /* paper shadow */
+  --muted-foreground: oklch(0.5 0.02 80);
+  --accent: oklch(0.65 0.16 55);        /* crayon amber/orange */
+  --accent-foreground: oklch(0.25 0.08 55);
+  --destructive: oklch(0.5 0.2 20);     /* red pencil */
+  --destructive-foreground: #ffffff;
+  --border: oklch(0.35 0.02 80 / 25%);  /* pencil line */
+  --input: oklch(0.35 0.02 80 / 15%);
+  --ring: oklch(0.48 0.14 265 / 40%);
+}
+
+/* ====== Paper texture background ====== */
+body {
+  background-color: var(--background);
+  background-image:
+    /* subtle paper grain */
+    url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  color: var(--foreground);
+  font-family: var(--font-sketch), var(--font-geist-sans), sans-serif;
+}
+
+/* ====== SVG rough-edge filter ====== */
+.sketch-card {
+  filter: url(#sketch-rough);
+  position: relative;
+}
+
+/* ====== Hand-drawn card style ====== */
+.card-sketch {
+  border: 2px solid oklch(0.3 0.02 80 / 30%);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow:
+    3px 3px 0 0 oklch(0.3 0.02 80 / 8%),
+    5px 5px 0 0 oklch(0.3 0.02 80 / 4%);
+  background: var(--card);
+}
+
+/* ====== Hand-drawn button style ====== */
+.btn-sketch {
+  border: 2px solid oklch(0.3 0.02 80 / 35%);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow:
+    2px 2px 0 0 oklch(0.3 0.02 80 / 10%);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.15s ease;
+}
+.btn-sketch:hover {
+  box-shadow: 4px 4px 0 0 oklch(0.3 0.02 80 / 15%);
+  transform: translate(-1px, -1px);
+}
+.btn-sketch:active {
+  box-shadow: 1px 1px 0 0 oklch(0.3 0.02 80 / 10%);
+  transform: translate(1px, 1px);
+}
+
+/* ====== Doodle divider ====== */
+.doodle-divider {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 8px,
+    oklch(0.35 0.02 80 / 30%) 8px,
+    oklch(0.35 0.02 80 / 30%) 12px
+  );
+  border: none;
+  margin: 1.5rem 0;
+}
+
+/* ====== Sketch badge ====== */
+.badge-sketch {
+  display: inline-block;
+  padding: 0.15em 0.7em;
+  border: 1.5px solid oklch(0.3 0.02 80 / 25%);
+  border-radius: 200px 20px 180px 20px / 20px 200px 20px 200px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+
+/* ====== Hand-drawn section titles ====== */
+.sketch-title-underline {
+  position: relative;
+  display: inline-block;
+}
+.sketch-title-underline::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: -2px;
+  height: 6px;
+  background: oklch(0.65 0.16 55 / 35%);
+  border-radius: 2px;
+  /* slight wobble */
+  transform: rotate(-0.3deg);
+}
+
+/* ====== Navbar sketch style ====== */
+.nav-sketch {
+  border-bottom: 2px solid oklch(0.3 0.02 80 / 20%);
+  background: var(--background);
+  /* subtle paper fold shadow */
+  box-shadow: 0 2px 4px oklch(0.3 0.02 80 / 5%);
+}
+
+/* ====== Decorative dots (used as bullet points) ====== */
+.dot-sketch::before {
+  content: "○";
+  display: inline-block;
+  margin-right: 0.4em;
+  font-size: 0.7em;
+  vertical-align: middle;
+  color: var(--primary);
+}
+
+/* ====== Slight random rotation utility ====== */
+.tilt-1 { transform: rotate(-0.4deg); }
+.tilt-2 { transform: rotate(0.3deg); }
+.tilt-3 { transform: rotate(-0.5deg); }
+.tilt-4 { transform: rotate(0.4deg); }
+.tilt-5 { transform: rotate(-0.3deg); }
+.tilt-6 { transform: rotate(0.5deg); }

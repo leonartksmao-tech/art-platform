@@ -1,0 +1,227 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ==================== 用户层 ====================
+
+model Profile {
+  id        String   @id @default(uuid())
+  userId    String   @unique @map("user_id")
+  nickname  String?  @db.VarChar(50)
+  avatarUrl String?  @map("avatar_url")
+  bio       String?  @db.Text
+  role      Role     @default(STUDENT)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  level             UserLevel?
+  userLessons       UserLesson[]
+  works             Work[]
+  comments          Comment[]
+  likes             Like[]
+  userSkills        UserSkill[]
+  userAchievements  UserAchievement[]
+
+  @@map("profiles")
+}
+
+model UserLevel {
+  id           String @id @default(uuid())
+  userId       String @unique @map("user_id")
+  level        Int    @default(1)
+  exp          Int    @default(0)
+  nextLevelExp Int    @default(100) @map("next_level_exp")
+
+  profile Profile @relation(fields: [userId], references: [userId])
+
+  @@map("user_levels")
+}
+
+enum Role {
+  STUDENT
+  PARENT
+  TEACHER
+  ADMIN
+}
+
+// ==================== 课程层 ====================
+
+model Course {
+  id          String   @id @default(uuid())
+  title       String   @db.VarChar(100)
+  description String   @db.Text
+  coverUrl    String?  @map("cover_url")
+  category    Category
+  lessonCount Int      @default(0) @map("lesson_count")
+  isPublished Boolean  @default(true) @map("is_published")
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  lessons Lesson[]
+
+  @@map("courses")
+}
+
+enum Category {
+  CREATIVE
+  BASIC
+}
+
+model Lesson {
+  id             String   @id @default(uuid())
+  courseId       String   @map("course_id")
+  title          String   @db.VarChar(100)
+  coreThinking   String?  @map("core_thinking") @db.VarChar(200)
+  workflowType   String?  @map("workflow_type") @db.VarChar(50)
+  promptTemplate String?  @map("prompt_template") @db.Text
+  contentJson    String?  @map("content_json") @db.Text
+  coverUrl       String?  @map("cover_url")
+  sortOrder      Int      @default(0) @map("sort_order")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  course      Course       @relation(fields: [courseId], references: [id])
+  userLessons UserLesson[]
+  works       Work[]
+  skillCard   SkillCard?
+
+  @@map("lessons")
+}
+
+model UserLesson {
+  id          String       @id @default(uuid())
+  userId      String       @map("user_id")
+  lessonId    String       @map("lesson_id")
+  status      LessonStatus @default(LOCKED)
+  completedAt DateTime?    @map("completed_at")
+  createdAt   DateTime     @default(now()) @map("created_at")
+
+  profile Profile @relation(fields: [userId], references: [userId])
+  lesson  Lesson  @relation(fields: [lessonId], references: [id])
+
+  @@unique([userId, lessonId])
+  @@map("user_lessons")
+}
+
+enum LessonStatus {
+  LOCKED
+  UNLOCKED
+  IN_PROGRESS
+  COMPLETED
+}
+
+// ==================== 作品层 ====================
+
+model Work {
+  id             String   @id @default(uuid())
+  userId         String   @map("user_id")
+  lessonId       String?  @map("lesson_id")
+  sketchUrl      String?  @map("sketch_url")
+  aiGeneratedUrl String?  @map("ai_generated_url")
+  finalWorkUrl   String?  @map("final_work_url")
+  title          String?  @db.VarChar(200)
+  story          String?  @db.Text
+  isFeatured     Boolean  @default(false) @map("is_featured")
+  likesCount     Int      @default(0) @map("likes_count")
+  commentsCount  Int      @default(0) @map("comments_count")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  profile  Profile   @relation(fields: [userId], references: [userId])
+  lesson   Lesson?   @relation(fields: [lessonId], references: [id])
+  comments Comment[]
+  likes    Like[]
+
+  @@map("works")
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  workId    String   @map("work_id")
+  userId    String   @map("user_id")
+  content   String   @db.Text
+  parentId  String?  @map("parent_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  work    Work      @relation(fields: [workId], references: [id])
+  profile Profile   @relation(fields: [userId], references: [userId])
+  parent  Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies Comment[] @relation("CommentReplies")
+
+  @@map("comments")
+}
+
+model Like {
+  id        String   @id @default(uuid())
+  workId    String   @map("work_id")
+  userId    String   @map("user_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  work    Work    @relation(fields: [workId], references: [id])
+  profile Profile @relation(fields: [userId], references: [userId])
+
+  @@unique([workId, userId])
+  @@map("likes")
+}
+
+// ==================== 游戏化层 ====================
+
+model SkillCard {
+  id          String @id @default(uuid())
+  name        String @db.VarChar(50)
+  description String @db.Text
+  iconUrl     String? @map("icon_url")
+  lessonId    String @unique @map("lesson_id")
+  rarity      Rarity @default(RARE)
+
+  lesson     Lesson       @relation(fields: [lessonId], references: [id])
+  userSkills UserSkill[]
+
+  @@map("skill_cards")
+}
+
+enum Rarity {
+  COMMON
+  RARE
+  EPIC
+  LEGENDARY
+}
+
+model UserSkill {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  skillCardId String   @map("skill_card_id")
+  earnedAt    DateTime @default(now()) @map("earned_at")
+
+  profile   Profile   @relation(fields: [userId], references: [userId])
+  skillCard SkillCard @relation(fields: [skillCardId], references: [id])
+
+  @@unique([userId, skillCardId])
+  @@map("user_skills")
+}
+
+model Achievement {
+  id          String @id @default(uuid())
+  name        String @db.VarChar(100)
+  description String @db.Text
+  iconUrl     String? @map("icon_url")
+  unlockRule  String @map("unlock_rule") @db.Text
+
+  userAchievements UserAchievement[]
+
+  @@map("achievements")
+}
+
+model UserAchievement {
+  id            String   @id @default(uuid())
+  userId        String   @map("user_id")
+  achievementId String   @map("achievement_id")
+  unlockedAt    DateTime @default(now()) @map("unlocked_at")
+
+  profile     Profile     @relation(fields: [userId], references: [userId])
+  achievement Achievement @relation(fields: [achievementId], references: [id])
+
+  @@unique([userId, achievementId])
+  @@map("user_achievements")
+}
