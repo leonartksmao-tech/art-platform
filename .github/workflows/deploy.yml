@@ -24,7 +24,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx prisma generate
+        env:
+          DATABASE_URL: postgresql://dummy:dummy@localhost:5432/dummy
       - run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://dummy.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: dummy-key
+          DATABASE_URL: postgresql://dummy:dummy@localhost:5432/dummy
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
