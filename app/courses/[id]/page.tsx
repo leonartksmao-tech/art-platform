@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { FALLBACK_COURSES } from "@/lib/data/fallback";
 
-export const dynamic = "force-dynamic";
+export function generateStaticParams() {
+  return FALLBACK_COURSES.map((c) => ({ id: c.id }));
+}
 
 export default async function CourseDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

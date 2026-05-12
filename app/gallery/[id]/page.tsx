@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
 import { FALLBACK_TEACHER_WORKS, FALLBACK_WORKS } from "@/lib/data/fallback";
 
-export const dynamic = "force-dynamic";
+export function generateStaticParams() {
+  return [...FALLBACK_TEACHER_WORKS, ...FALLBACK_WORKS].map((w) => ({ id: w.id }));
+}
 
 export default async function WorkDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

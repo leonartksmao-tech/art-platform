@@ -3,7 +3,6 @@ import { prisma } from "@/lib/db/prisma";
 import { checkAchievements } from "@/lib/gamification/achievement-checker";
 import { EXP_RULES } from "@/lib/gamification/exp-calculator";
 
-export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   try {

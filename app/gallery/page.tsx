@@ -2,8 +2,6 @@ import Link from "next/link";
 import { formatDate } from "@/lib/utils";
 import { FALLBACK_TEACHER_WORKS } from "@/lib/data/fallback";
 
-export const dynamic = "force-dynamic";
-
 export default function GalleryPage() {
   const works = FALLBACK_TEACHER_WORKS;
 

@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { FALLBACK_COURSES } from "@/lib/data/fallback";
 
-export const dynamic = "force-dynamic";
-
 export default function CoursesPage() {
   const courses = FALLBACK_COURSES;
 
