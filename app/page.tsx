@@ -47,7 +47,7 @@ export default function HomePage() {
 
       {/* Lesson Quick Scroll */}
       <Section title="探索课程" subtitle="21 节课，从图形概括到综合创作" viewAllHref="/courses">
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
+        <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory no-scrollbar">
           {FALLBACK_COURSES.flatMap((c) =>
             c.lessons.map((l) => ({ ...l, courseId: c.id, courseCategory: c.category, courseTitle: c.title }))
           ).slice(0, 10).map((lesson) => (
@@ -75,7 +75,7 @@ export default function HomePage() {
 
       {/* Skill Cards */}
       <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，21 张卡牌见证成长" viewAllHref="/profile/skills">
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
+        <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory no-scrollbar">
           {displaySkills.map((skill) => (
             <div key={skill.name} className="w-[240px] shrink-0 snap-start">
               <SkillCardMini
@@ -100,7 +100,7 @@ export default function HomePage() {
 
       {/* Value Props */}
       <Section title="为什么选择 AI 创作课" subtitle="不只是学画画，更是培养 AI 时代的核心创造力" variant="muted">
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
+        <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory no-scrollbar">
           {[
             { icon: "🎬", title: "AI 是画笔，孩子是导演", desc: "孩子画草图定故事方向，AI 辅助润色。AI 不会讲故事，孩子会。" },
             { icon: "👨‍👩‍👧", title: "亲子共创时光", desc: "家长文字 + 孩子草图 + 老师导读 + AI 落地。创作成为高质量陪伴。" },
