@@ -13,14 +13,9 @@ interface Course {
 
 const courseConfig: Record<string, { gradient: string; emoji: string; label: string }> = {
   CREATIVE: {
-    gradient: "from-purple-500 to-indigo-600",
-    emoji: "🎨",
-    label: "创作课",
-  },
-  BASIC: {
-    gradient: "from-emerald-500 to-teal-600",
-    emoji: "📐",
-    label: "基础课",
+    gradient: "from-amber-500 to-rose-500",
+    emoji: "📚",
+    label: "创意绘本课",
   },
 };
 

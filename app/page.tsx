@@ -50,23 +50,15 @@ export default function HomePage() {
         <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
           {FALLBACK_COURSES.flatMap((c) =>
             c.lessons.map((l) => ({ ...l, courseId: c.id, courseCategory: c.category, courseTitle: c.title }))
-          ).slice(0, 10).map((lesson) => {
-            const isCreative = lesson.courseCategory === "CREATIVE";
-            return (
+          ).slice(0, 10).map((lesson) => (
               <Link
                 key={lesson.id}
                 href={`/courses/${lesson.courseId}/learn?lesson=${lesson.id}`}
                 className="w-[140px] shrink-0 snap-start"
               >
                 <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
-                  <div
-                    className={`aspect-[3/4] flex items-center justify-center ${
-                      isCreative
-                        ? "bg-gradient-to-br from-purple-500 to-indigo-600"
-                        : "bg-gradient-to-br from-emerald-500 to-teal-600"
-                    }`}
-                  >
-                    <span className="text-4xl">{isCreative ? "🎨" : "📐"}</span>
+                  <div className="aspect-[3/4] flex items-center justify-center bg-gradient-to-br from-amber-400 to-rose-500">
+                    <span className="text-4xl">📚</span>
                   </div>
                   <div className="p-3">
                     <p className="font-semibold text-sm truncate">{lesson.title}</p>
@@ -76,8 +68,8 @@ export default function HomePage() {
                   </div>
                 </div>
               </Link>
-            );
-          })}
+            )
+          )}
         </div>
       </Section>
 
@@ -98,8 +90,8 @@ export default function HomePage() {
       </Section>
 
       {/* Featured Courses */}
-      <Section title="两大课程体系" subtitle="从基础能力到创造性思维，系统培养 AI 时代的小创作者" viewAllHref="/courses">
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <Section title="创意绘本课" subtitle="21 节 AI 融合创作，从图形概括到综合创作，系统培养 AI 时代的小创作者" viewAllHref="/courses">
+        <div className="max-w-md mx-auto">
           {FALLBACK_COURSES.map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}

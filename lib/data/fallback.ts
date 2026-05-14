@@ -1,11 +1,11 @@
 export const FALLBACK_COURSES = [
   {
-    id: "creative",
-    title: "创作课",
+    id: "picture-book",
+    title: "创意绘本课",
     description:
-      "12 节创造力训练，每节课一个核心思维 + 一个物理互动形式 + AI 协作工作流。培养孩子的拆解力、导演思维、色彩叙事力和符号化表达能力。",
+      "21 节 AI 融合创作课，从图形概括、色彩叙事到综合创作。每节课一个核心思维 + 一个物理互动形式 + AI 协作工作流，系统培养 AI 时代的小创作者。",
     category: "CREATIVE" as const,
-    lessonCount: 12,
+    lessonCount: 21,
     sortOrder: 1,
     isPublished: true,
     lessons: [
@@ -21,27 +21,15 @@ export const FALLBACK_COURSES = [
       { id: "seed-l10", title: "未来的我", coreThinking: "人物塑造力——创造一个未来世界的自己", sortOrder: 10, workflowType: "character-consistency" },
       { id: "seed-l11", title: "声音看得见", coreThinking: "通感转换——把听觉信息转译成视觉语言", sortOrder: 11, workflowType: "expression-solver" },
       { id: "seed-l12", title: "我的豆豆本", coreThinking: "综合创作——把多节课作品整合成一本完整的绘本", sortOrder: 12, workflowType: "tile-verify" },
-    ],
-  },
-  {
-    id: "basic",
-    title: "基础课",
-    description:
-      "9 节基础能力训练，从图形概括、人体解构到空间逻辑、四方连续。建立设计思维，把艺术创作转化为可玩、可穿戴、可展示的成品。",
-    category: "BASIC" as const,
-    lessonCount: 9,
-    sortOrder: 2,
-    isPublished: true,
-    lessons: [
-      { id: "seed-l13", title: "图形的秘密", coreThinking: "图形概括——万事万物都可还原为基本图形", sortOrder: 1, workflowType: "sketch-refine" },
-      { id: "seed-l14", title: "人体解构", coreThinking: "结构思维——用关节和比例解构复杂人体", sortOrder: 2, workflowType: "character-consistency" },
-      { id: "seed-l15", title: "色彩实验室", coreThinking: "色环技法——认识原色、间色、互补色的科学规律", sortOrder: 3, workflowType: "color-compare" },
-      { id: "seed-l16", title: "纹理博物馆", coreThinking: "质感表达——收集并再现自然和人工物的表面纹理", sortOrder: 4, workflowType: "texture-reference" },
-      { id: "seed-l17", title: "空间搭建", coreThinking: "透视入门——建立近大远小、前后遮挡的空间意识", sortOrder: 5, workflowType: "spatial-factory" },
-      { id: "seed-l18", title: "角色设计", coreThinking: "人物设计——从性格出发设计角色外观", sortOrder: 6, workflowType: "character-consistency" },
-      { id: "seed-l19", title: "图案连续", coreThinking: "四方连续——理解重复、镜像、旋转的装饰规律", sortOrder: 7, workflowType: "tile-verify" },
-      { id: "seed-l20", title: "立体造型", coreThinking: "3D 思维——从平面到立体，训练体块转换能力", sortOrder: 8, workflowType: "spatial-factory" },
-      { id: "seed-l21", title: "我的品牌", coreThinking: "综合设计——把全课程技能整合成一个个人品牌", sortOrder: 9, workflowType: "style-transfer" },
+      { id: "seed-l13", title: "图形的秘密", coreThinking: "图形概括——万事万物都可还原为基本图形", sortOrder: 13, workflowType: "sketch-refine" },
+      { id: "seed-l14", title: "人体解构", coreThinking: "结构思维——用关节和比例解构复杂人体", sortOrder: 14, workflowType: "character-consistency" },
+      { id: "seed-l15", title: "色彩实验室", coreThinking: "色环技法——认识原色、间色、互补色的科学规律", sortOrder: 15, workflowType: "color-compare" },
+      { id: "seed-l16", title: "纹理博物馆", coreThinking: "质感表达——收集并再现自然和人工物的表面纹理", sortOrder: 16, workflowType: "texture-reference" },
+      { id: "seed-l17", title: "空间搭建", coreThinking: "透视入门——建立近大远小、前后遮挡的空间意识", sortOrder: 17, workflowType: "spatial-factory" },
+      { id: "seed-l18", title: "角色设计", coreThinking: "人物设计——从性格出发设计角色外观", sortOrder: 18, workflowType: "character-consistency" },
+      { id: "seed-l19", title: "图案连续", coreThinking: "四方连续——理解重复、镜像、旋转的装饰规律", sortOrder: 19, workflowType: "tile-verify" },
+      { id: "seed-l20", title: "立体造型", coreThinking: "3D 思维——从平面到立体，训练体块转换能力", sortOrder: 20, workflowType: "spatial-factory" },
+      { id: "seed-l21", title: "我的品牌", coreThinking: "综合设计——把全课程技能整合成一个个人品牌", sortOrder: 21, workflowType: "style-transfer" },
     ],
   },
 ];

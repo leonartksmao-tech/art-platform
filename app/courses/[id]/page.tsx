@@ -21,14 +21,14 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
       <div className="bg-muted py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <Badge variant="secondary" className="mb-4">
-            {course.category === "CREATIVE" ? "创作课" : "基础课"}
+            创意绘本课
           </Badge>
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">{course.title}</h1>
           <p className="mt-3 text-muted-foreground text-lg leading-relaxed max-w-2xl">{course.description}</p>
           <div className="mt-4 flex items-center gap-3 text-sm text-muted-foreground">
             <span>{course.lessonCount} 节课</span>
             <span>·</span>
-            <span>{course.category === "CREATIVE" ? "创造力训练" : "基础能力训练"}</span>
+            <span>AI 融合创作训练</span>
           </div>
           <div className="mt-6">
             <Button size="lg" className="bg-primary hover:bg-[#d04a40]" asChild>
@@ -60,7 +60,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
               <CardContent className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">课程类型</span>
-                  <span className="font-medium">{course.category === "CREATIVE" ? "创作课" : "基础课"}</span>
+                  <span className="font-medium">创意绘本课</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">课时数</span>
