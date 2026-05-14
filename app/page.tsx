@@ -95,15 +95,16 @@ export default function HomePage() {
 
       {/* Skill Cards */}
       <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，21 张卡牌见证成长" viewAllHref="/profile/skills">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
           {displaySkills.map((skill) => (
-            <SkillCardMini
-              key={skill.name}
-              name={skill.name}
-              rarity={skill.rarity}
-              image={skill.image}
-              description={skill.description}
-            />
+            <div key={skill.name} className="w-[140px] shrink-0 snap-start">
+              <SkillCardMini
+                name={skill.name}
+                rarity={skill.rarity}
+                image={skill.image}
+                description={skill.description}
+              />
+            </div>
           ))}
         </div>
       </Section>
