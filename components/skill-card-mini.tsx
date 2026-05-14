@@ -4,7 +4,6 @@ import { assetUrl } from "@/lib/utils";
 interface SkillCardMiniProps {
   name: string;
   rarity: "COMMON" | "RARE" | "EPIC" | "LEGENDARY";
-  index?: number;
   description?: string;
   unlocked?: boolean;
   image?: string;
@@ -24,7 +23,7 @@ const rarityBorder: Record<string, string> = {
   LEGENDARY: "border-amber-400",
 };
 
-export function SkillCardMini({ name, rarity, index, description, unlocked = true, image }: SkillCardMiniProps) {
+export function SkillCardMini({ name, rarity, description, unlocked = true, image }: SkillCardMiniProps) {
   if (image) {
     return (
       <div className={`rounded-xl overflow-hidden border-2 transition-all hover:-translate-y-0.5 hover:shadow-lg ${
@@ -32,11 +31,6 @@ export function SkillCardMini({ name, rarity, index, description, unlocked = tru
       }`}>
         <div className="aspect-[3/4] relative bg-muted">
           <Image src={assetUrl(image)} alt={name} fill sizes="25vw" className="object-cover img-bright" />
-          {index != null && (
-            <span className="absolute top-2 left-2 flex h-6 w-6 items-center justify-center rounded-full bg-black/60 text-white text-xs font-bold">
-              {index}
-            </span>
-          )}
         </div>
         <div className="p-2 text-center bg-card">
           <p className="font-bold text-xs truncate">{name}</p>
