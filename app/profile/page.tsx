@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
+import Image from "next/image";
+import { assetUrl } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -155,9 +157,9 @@ export default function ProfilePage() {
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
               {works?.slice(0, 4).map((work: any) => (
                 <Link key={work.id} href={`/gallery/${work.id}`}>
-                  <div className="aspect-square bg-muted rounded-lg overflow-hidden">
+                  <div className="aspect-square bg-muted rounded-lg overflow-hidden relative">
                     {work.finalWorkUrl ? (
-                      <img src={work.finalWorkUrl} alt={work.title} className="w-full h-full object-cover" />
+                      <Image src={assetUrl(work.finalWorkUrl)} alt={work.title} fill sizes="25vw" className="object-cover" />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">暂无图片</div>
                     )}

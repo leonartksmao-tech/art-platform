@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
+import Image from "next/image";
+import { assetUrl } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Star, Heart } from "lucide-react";
@@ -37,9 +39,9 @@ export default function MyWorksPage() {
           {works.map((work: any) => (
             <Link key={work.id} href={`/gallery/${work.id}`}>
               <Card className="hover:shadow transition-shadow cursor-pointer">
-                <div className="aspect-square bg-muted rounded-t-xl overflow-hidden">
+                <div className="aspect-square bg-muted rounded-t-xl overflow-hidden relative">
                   {work.finalWorkUrl ? (
-                    <img src={work.finalWorkUrl} alt={work.title} className="w-full h-full object-cover" />
+                    <Image src={assetUrl(work.finalWorkUrl)} alt={work.title} fill sizes="25vw" className="object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">暂无图片</div>
                   )}

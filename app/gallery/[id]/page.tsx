@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { formatDate, formatCount } from "@/lib/utils";
+import { formatDate, formatCount, assetUrl } from "@/lib/utils";
 import { FALLBACK_TEACHER_WORKS, FALLBACK_WORKS } from "@/lib/data/fallback";
 
 export function generateStaticParams() {
@@ -42,11 +43,13 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ id:
           </div>
 
           {work.finalWorkUrl && (
-            <div className="rounded-xl overflow-hidden">
-              <img
-                src={work.finalWorkUrl}
+            <div className="rounded-xl overflow-hidden relative aspect-[4/3]">
+              <Image
+                src={assetUrl(work.finalWorkUrl)}
                 alt={work.title}
-                className="w-full object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
+                fill
+                sizes="(max-width: 1024px) 100vw, 66vw"
+                className="object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
               />
             </div>
           )}
@@ -56,12 +59,13 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ id:
               <h3 className="font-bold text-sm uppercase tracking-wider text-muted-foreground mb-3">作品图集</h3>
               <div className="grid grid-cols-2 gap-3">
                 {work.gallery.map((img, i) => (
-                  <div key={i} className="aspect-[4/3] rounded-xl border overflow-hidden bg-muted">
-                    <img
-                      src={img}
+                  <div key={i} className="aspect-[4/3] rounded-xl border overflow-hidden bg-muted relative">
+                    <Image
+                      src={assetUrl(img)}
                       alt={`${work.title} ${i + 1}`}
-                      className="w-full h-full object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
-                      loading="lazy"
+                      fill
+                      sizes="(max-width: 640px) 50vw, 33vw"
+                      className="object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
                     />
                   </div>
                 ))}
@@ -86,12 +90,13 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ id:
                 {studentWorks.map((s) => (
                   <Link key={s.id} href={`/gallery/${s.id}`}>
                     <div className="rounded-2xl bg-card shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 transition-all overflow-hidden cursor-pointer">
-                      <div className="aspect-[4/3] overflow-hidden">
-                        <img
-                          src={s.finalWorkUrl}
+                      <div className="aspect-[4/3] overflow-hidden relative">
+                        <Image
+                          src={assetUrl(s.finalWorkUrl)}
                           alt={s.title}
-                          className="w-full h-full object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
-                          loading="lazy"
+                          fill
+                          sizes="(max-width: 640px) 50vw, 33vw"
+                          className="object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
                         />
                       </div>
                       <div className="p-3">

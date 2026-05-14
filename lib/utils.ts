@@ -1,6 +1,12 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+export function assetUrl(path: string): string {
+  if (!path) return path;
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  return `${prefix}${path}`;
+}
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }

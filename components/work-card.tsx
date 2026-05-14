@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { formatCount } from "@/lib/utils";
+import { formatCount, assetUrl } from "@/lib/utils";
 
 interface Work {
   id: string;
@@ -17,11 +18,12 @@ export function WorkCard({ work }: { work: Work }) {
     <Link href={`/gallery/${work.id}`} className="group block">
       <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
         <div className="aspect-[4/3] overflow-hidden bg-muted relative">
-          <img
-            src={work.finalWorkUrl}
+          <Image
+            src={assetUrl(work.finalWorkUrl)}
             alt={work.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
-            loading="lazy"
+            fill
+            sizes="(max-width: 640px) 50vw, 33vw"
+            className="object-cover group-hover:scale-105 transition-transform duration-300 filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
           />
           {work.isFeatured && (
             <Badge className="absolute top-3 left-3 bg-amber-500 text-white border-0 text-[10px]">
