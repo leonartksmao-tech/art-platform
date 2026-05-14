@@ -1,8 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import Image from "next/image";
 import { assetUrl } from "@/lib/utils";
@@ -10,74 +5,51 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
-import { BookOpen, Star, Award, Zap, Settings } from "lucide-react";
+import { BookOpen, Star, Award, Zap } from "lucide-react";
+import { FALLBACK_SKILL_CARDS, FALLBACK_TEACHER_WORKS, FALLBACK_WORKS } from "@/lib/data/fallback";
 
 export default function ProfilePage() {
-  const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
-  const supabase = createClient();
-
-  useEffect(() => {
-    (async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) { router.push("/auth"); return; }
-      const res = await fetch(`/api/profile?userId=${user.id}`);
-      const json = await res.json();
-      setData(json);
-      setLoading(false);
-    })();
-  }, []);
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    router.push("/");
+  const demoProfile = {
+    nickname: "小创作者",
+    bio: "小小创作者",
+    level: { level: 1, name: "初学者" },
+    exp: 120,
+    nextLevel: { level: 2, name: "探索者" },
+    nextExpRequired: 300,
+    progress: 40,
   };
 
-  if (loading) {
-    return (
-      <div className="mx-auto max-w-3xl px-4 py-8 space-y-6">
-        <Skeleton className="h-24 w-full" />
-        <Skeleton className="h-48 w-full" />
-      </div>
-    );
-  }
-
-  if (!data) return null;
-
-  const { profile, level, completedLessons, totalLessons, skills, achievements, works } = data;
+  const completedLessons = 5;
+  const totalLessons = 21;
+  const allWorks = [...FALLBACK_TEACHER_WORKS, ...FALLBACK_WORKS].slice(0, 4);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 space-y-6">
-      {/* User Header */}
       <Card>
         <CardContent className="pt-6">
           <div className="flex items-center gap-4">
             <Avatar className="h-16 w-16">
-              <AvatarFallback className="text-xl">{profile?.nickname?.charAt(0) ?? "?"}</AvatarFallback>
+              <AvatarFallback className="text-xl">创</AvatarFallback>
             </Avatar>
             <div className="flex-1">
-              <h1 className="text-xl font-bold">{profile?.nickname ?? "未设置昵称"}</h1>
-              <p className="text-sm text-muted-foreground">{profile?.bio ?? "小小创作者"}</p>
+              <h1 className="text-xl font-bold">{demoProfile.nickname}</h1>
+              <p className="text-sm text-muted-foreground">{demoProfile.bio}</p>
               <div className="flex items-center gap-2 mt-1">
                 <Badge variant="secondary" className="gap-1">
-                  <Zap className="h-3 w-3" />Lv.{level.currentLevel.level} {level.currentLevel.name}
+                  <Zap className="h-3 w-3" />Lv.{demoProfile.level.level} {demoProfile.level.name}
                 </Badge>
-                <span className="text-xs text-muted-foreground">{level.exp} EXP</span>
+                <span className="text-xs text-muted-foreground">{demoProfile.exp} EXP</span>
               </div>
             </div>
-            <Button variant="outline" size="sm" onClick={handleSignOut}>退出</Button>
           </div>
-          <Progress value={level.progress} className="mt-4" />
+          <Progress value={demoProfile.progress} className="mt-4" />
           <p className="text-xs text-muted-foreground mt-1">
-            距离 Lv.{level.nextLevel.level} {level.nextLevel.name} 还需 {level.nextLevel.expRequired - level.exp} EXP
+            距离 Lv.{demoProfile.nextLevel.level} {demoProfile.nextLevel.name} 还需 {demoProfile.nextExpRequired - demoProfile.exp} EXP
           </p>
         </CardContent>
       </Card>
 
-      {/* Stats Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <Link href="/profile/courses">
           <Card className="hover:shadow transition-shadow cursor-pointer">
@@ -92,7 +64,7 @@ export default function ProfilePage() {
           <Card className="hover:shadow transition-shadow cursor-pointer">
             <CardContent className="pt-6 text-center">
               <Star className="mx-auto h-6 w-6 text-amber-500 mb-2" />
-              <p className="text-2xl font-bold">{works?.length ?? 0}</p>
+              <p className="text-2xl font-bold">{allWorks.length}</p>
               <p className="text-xs text-muted-foreground">作品</p>
             </CardContent>
           </Card>
@@ -101,7 +73,7 @@ export default function ProfilePage() {
           <Card className="hover:shadow transition-shadow cursor-pointer">
             <CardContent className="pt-6 text-center">
               <Award className="mx-auto h-6 w-6 text-purple-500 mb-2" />
-              <p className="text-2xl font-bold">{skills?.length ?? 0}<span className="text-sm text-muted-foreground">/21</span></p>
+              <p className="text-2xl font-bold">{completedLessons}<span className="text-sm text-muted-foreground">/21</span></p>
               <p className="text-xs text-muted-foreground">技能卡牌</p>
             </CardContent>
           </Card>
@@ -110,14 +82,13 @@ export default function ProfilePage() {
           <Card className="hover:shadow transition-shadow cursor-pointer">
             <CardContent className="pt-6 text-center">
               <Award className="mx-auto h-6 w-6 text-green-500 mb-2" />
-              <p className="text-2xl font-bold">{achievements?.length ?? 0}<span className="text-sm text-muted-foreground">/12</span></p>
+              <p className="text-2xl font-bold">3<span className="text-sm text-muted-foreground">/12</span></p>
               <p className="text-xs text-muted-foreground">成就</p>
             </CardContent>
           </Card>
         </Link>
       </div>
 
-      {/* Skill Cards Preview */}
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
           <div>
@@ -127,21 +98,17 @@ export default function ProfilePage() {
           <Link href="/profile/skills"><Button variant="ghost" size="sm">查看全部</Button></Link>
         </CardHeader>
         <CardContent>
-          {skills?.length === 0 ? (
-            <p className="text-sm text-muted-foreground">完成第一节课来获得你的第一张技能卡牌！</p>
-          ) : (
-            <div className="flex flex-wrap gap-2">
-              {skills?.slice(0, 6).map((skill: any) => (
-                <Badge key={skill.id} variant={skill.rarity === "LEGENDARY" ? "default" : "secondary"}>
-                  {skill.name}
-                </Badge>
-              ))}
-            </div>
-          )}
+          <div className="flex flex-wrap gap-2">
+            {FALLBACK_SKILL_CARDS.slice(0, 5).map((skill) => (
+              <Badge key={skill.name} variant={skill.rarity === "LEGENDARY" ? "default" : "secondary"}>
+                {skill.name}
+              </Badge>
+            ))}
+            <Badge variant="outline">+{FALLBACK_SKILL_CARDS.length - 5} 更多</Badge>
+          </div>
         </CardContent>
       </Card>
 
-      {/* Recent Works */}
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
           <div>
@@ -151,23 +118,19 @@ export default function ProfilePage() {
           <Link href="/profile/works"><Button variant="ghost" size="sm">查看全部</Button></Link>
         </CardHeader>
         <CardContent>
-          {works?.length === 0 ? (
-            <p className="text-sm text-muted-foreground">完成一节课并上传你的第一个作品！</p>
-          ) : (
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-              {works?.slice(0, 4).map((work: any) => (
-                <Link key={work.id} href={`/gallery/${work.id}`}>
-                  <div className="aspect-square bg-muted rounded-lg overflow-hidden relative">
-                    {work.finalWorkUrl ? (
-                      <Image src={assetUrl(work.finalWorkUrl)} alt={work.title} fill sizes="25vw" className="object-cover" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">暂无图片</div>
-                    )}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+            {allWorks.map((work) => (
+              <Link key={work.id} href={`/gallery/${work.id}`}>
+                <div className="aspect-square bg-muted rounded-lg overflow-hidden relative">
+                  {work.finalWorkUrl ? (
+                    <Image src={assetUrl(work.finalWorkUrl)} alt={work.title} fill sizes="25vw" className="object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">暂无图片</div>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
         </CardContent>
       </Card>
     </div>

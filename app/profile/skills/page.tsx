@@ -1,37 +1,10 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Award, Lock } from "lucide-react";
+import { FALLBACK_SKILL_CARDS } from "@/lib/data/fallback";
+import Image from "next/image";
+import { assetUrl } from "@/lib/utils";
 
 export default function SkillsPage() {
-  const [skills, setSkills] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
-  const supabase = createClient();
-
-  useEffect(() => {
-    (async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) { router.push("/auth"); return; }
-      const res = await fetch(`/api/skills?userId=${user.id}`);
-      const json = await res.json();
-      setSkills(json.skills);
-      setLoading(false);
-    })();
-  }, []);
-
-  if (loading) return <div className="mx-auto max-w-3xl px-4 py-8"><Skeleton className="h-64 w-full" /></div>;
-
-  const rarityLabel: Record<string, string> = { COMMON: "普通", RARE: "稀有", EPIC: "史诗", LEGENDARY: "传说" };
-  const rarityVariant: Record<string, "default" | "secondary" | "outline" | "destructive"> = {
-    COMMON: "outline", RARE: "secondary", EPIC: "default", LEGENDARY: "destructive"
-  };
-
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
       <div className="mb-8">
@@ -40,18 +13,30 @@ export default function SkillsPage() {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
-        {skills.map((skill: any) => (
-          <Card key={skill.id} className={skill.earned ? "border-primary/30" : "opacity-50"}>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  {skill.earned ? <Award className="h-5 w-5 text-primary" /> : <Lock className="h-5 w-5 text-muted-foreground" />}
-                  <CardTitle className="text-base">{skill.name}</CardTitle>
+        {FALLBACK_SKILL_CARDS.map((skill) => (
+          <Card key={skill.name}>
+            <CardContent className="pt-4 flex items-start gap-4">
+              {skill.image ? (
+                <div className="w-20 h-[105px] shrink-0 rounded-lg overflow-hidden relative bg-muted">
+                  <Image src={assetUrl(skill.image)} alt={skill.name} fill sizes="80px" className="object-cover" />
                 </div>
-                <Badge variant={rarityVariant[skill.rarity] ?? "outline"}>{rarityLabel[skill.rarity]}</Badge>
+              ) : (
+                <div className="w-20 h-[105px] shrink-0 rounded-lg bg-muted flex items-center justify-center">
+                  <span className="text-2xl">🃏</span>
+                </div>
+              )}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="font-semibold text-sm truncate">{skill.name}</p>
+                  <Badge variant="outline" className="text-[10px] shrink-0">
+                    {skill.rarity === "LEGENDARY" ? "传说" : skill.rarity === "EPIC" ? "史诗" : skill.rarity === "RARE" ? "稀有" : "普通"}
+                  </Badge>
+                </div>
+                {skill.description && (
+                  <p className="text-xs text-muted-foreground leading-relaxed">{skill.description}</p>
+                )}
               </div>
-              <CardDescription className="text-sm">{skill.description}</CardDescription>
-            </CardHeader>
+            </CardContent>
           </Card>
         ))}
       </div>
