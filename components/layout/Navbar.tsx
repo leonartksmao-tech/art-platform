@@ -23,10 +23,14 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-border">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2.5 text-foreground">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-extrabold text-sm">猫</span>
-          <span className="font-bold text-lg tracking-tight hidden sm:inline">猫猫老师 AI 创作教室</span>
-          <span className="font-bold text-lg tracking-tight sm:hidden">AI 创作教室</span>
+        <Link href="/" className="flex items-center gap-2 text-foreground">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-lg">🎨</span>
+          <span className="flex items-baseline gap-1.5">
+            <span className="text-sm">🐱</span>
+            <span className="font-bold text-lg tracking-tight hidden sm:inline">猫猫老师 AI 创作教室</span>
+            <span className="font-bold text-lg tracking-tight sm:hidden">AI 创作教室</span>
+            <span className="hidden lg:inline text-[10px] text-muted-foreground font-medium ml-1 bg-muted px-1.5 py-0.5 rounded">央美</span>
+          </span>
         </Link>
 
         <div className="flex items-center gap-1">

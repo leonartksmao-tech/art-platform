@@ -17,9 +17,14 @@ export default function HomePage() {
       {/* Header */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <Badge variant="secondary" className="mb-5">
-            央美审美 × AI 工作流 × 创造力训练
-          </Badge>
+          {/* 学院派猫猫装饰 */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="text-3xl tilt-1">🐱</span>
+            <Badge variant="secondary" className="font-sketch text-sm px-3 py-1">
+              央美审美 × AI 工作流 × 创造力训练
+            </Badge>
+            <span className="text-3xl tilt-4">🎨</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-foreground">
             让每个孩子成为
             <span className="block text-primary">
@@ -31,17 +36,17 @@ export default function HomePage() {
             21 节 AI 融合创作课，保护童真，放大想象。
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-[#d04a40]" asChild>
-              <Link href="/courses">开始学习</Link>
+            <Button size="lg" className="btn-sketch bg-primary hover:bg-[#d04a40]" asChild>
+              <Link href="/courses">🎨 开始学习</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link href="/gallery">浏览作品</Link>
+              <Link href="/gallery">🐾 浏览作品</Link>
             </Button>
           </div>
           <div className="mt-6 flex items-center gap-4 justify-center text-sm text-muted-foreground">
-            <span>✓ 21 节精品课程</span>
-            <span>✓ 5 级成长体系</span>
-            <span>✓ 12 个成就徽章</span>
+            <span>🐱 21 节精品课程</span>
+            <span>🎓 5 级成长体系</span>
+            <span>⭐ 12 个成就徽章</span>
           </div>
         </div>
       </section>
