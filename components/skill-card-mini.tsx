@@ -16,6 +16,20 @@ const rarityBadge: Record<string, string> = {
   LEGENDARY: "传说",
 };
 
+const rarityEmoji: Record<string, string> = {
+  COMMON: "🌟",
+  RARE: "💫",
+  EPIC: "✨",
+  LEGENDARY: "👑",
+};
+
+const rarityBadgeColor: Record<string, string> = {
+  COMMON: "bg-gray-100 text-gray-600",
+  RARE: "bg-blue-100 text-blue-600",
+  EPIC: "bg-purple-100 text-purple-600",
+  LEGENDARY: "bg-amber-100 text-amber-700",
+};
+
 const rarityBorder: Record<string, string> = {
   COMMON: "border-[#c0c5cc]",
   RARE: "border-blue-400",
@@ -31,12 +45,16 @@ export function SkillCardMini({ name, rarity, description, unlocked = true, imag
       }`}>
         <div className="aspect-[3/4] relative bg-muted">
           <Image src={assetUrl(image)} alt={name} fill sizes="25vw" className="object-cover img-bright" />
+          {/* 稀有度图标 */}
+          <span className="absolute top-2 right-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-sm shadow-sm">
+            {rarityEmoji[rarity]}
+          </span>
         </div>
-        <div className="p-2 text-center bg-card">
+        <div className="p-2.5 text-center bg-card space-y-1">
           <p className="font-bold text-xs truncate">{name}</p>
-          <span className={`text-[10px] font-semibold uppercase tracking-wider ${
-            unlocked ? "text-muted-foreground" : "text-muted-foreground"
-          }`}>{rarityBadge[rarity]}</span>
+          <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold ${rarityBadgeColor[rarity]}`}>
+            {rarityEmoji[rarity]} {rarityBadge[rarity]}
+          </span>
         </div>
       </div>
     );
@@ -56,20 +74,16 @@ export function SkillCardMini({ name, rarity, description, unlocked = true, imag
       }`}
     >
       <p
-        className={`text-2xl mb-1 ${
-          rarity === "LEGENDARY" ? "animate-pulse" : ""
+        className={`text-3xl mb-1.5 ${
+          rarity === "LEGENDARY" ? "animate-bounce" : ""
         }`}
       >
-        {rarity === "LEGENDARY" ? "👑" : rarity === "EPIC" ? "💎" : rarity === "RARE" ? "⭐" : "🔹"}
+        {rarityEmoji[rarity]}
       </p>
       <p className={`font-bold text-sm ${!unlocked ? "text-muted-foreground" : ""}`}>
         {name}
       </p>
-      <span
-        className={`inline-block mt-1 text-[10px] font-semibold uppercase tracking-wider ${
-          unlocked ? "opacity-60" : "text-muted-foreground"
-        }`}
-      >
+      <span className={`inline-block mt-1.5 px-2 py-0.5 rounded-full text-[10px] font-semibold ${rarityBadgeColor[rarity]}`}>
         {rarityBadge[rarity]}
       </span>
       {description && (
