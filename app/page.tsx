@@ -1,12 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Section } from "@/components/section-wrapper";
 import { CourseCard } from "@/components/course-card";
 import { WorkCard } from "@/components/work-card";
-
 import { SkillCardMini } from "@/components/skill-card-mini";
 import { FALLBACK_COURSES, FALLBACK_TEACHER_WORKS, FALLBACK_SKILL_CARDS } from "@/lib/data/fallback";
+import { assetUrl } from "@/lib/utils";
 
 export default function HomePage() {
   const displaySkills = FALLBACK_SKILL_CARDS.slice(0, 8);
@@ -57,8 +58,8 @@ export default function HomePage() {
                 className="w-[240px] shrink-0 snap-start"
               >
                 <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
-                  <div className="aspect-[3/4] flex items-center justify-center bg-gradient-to-br from-amber-400 to-rose-500">
-                    <span className="text-6xl">📚</span>
+                  <div className="aspect-[3/4] relative bg-muted">
+                    <Image src={assetUrl((lesson as any).image)} alt={lesson.title} fill sizes="240px" className="object-cover" />
                   </div>
                   <div className="p-4">
                     <p className="font-bold text-base truncate">{lesson.title}</p>
