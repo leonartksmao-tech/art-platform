@@ -4,15 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Section } from "@/components/section-wrapper";
 import { CourseCard } from "@/components/course-card";
 import { WorkCard } from "@/components/work-card";
-import { LessonRow } from "@/components/lesson-row";
+
 import { SkillCardMini } from "@/components/skill-card-mini";
 import { FALLBACK_COURSES, FALLBACK_TEACHER_WORKS, FALLBACK_SKILL_CARDS } from "@/lib/data/fallback";
 
 export default function HomePage() {
-  const allLessons = FALLBACK_COURSES.flatMap((c) =>
-    c.lessons.slice(0, 3).map((l) => ({ ...l, courseId: c.id }))
-  ).slice(0, 6);
-
   const displaySkills = FALLBACK_SKILL_CARDS.slice(0, 8);
 
   return (
@@ -48,15 +44,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Featured Courses */}
-      <Section title="两大课程体系" subtitle="从基础能力到创造性思维，系统培养 AI 时代的小创作者" viewAllHref="/courses">
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {FALLBACK_COURSES.map((course) => (
-            <CourseCard key={course.id} course={course} />
-          ))}
-        </div>
-      </Section>
 
       {/* Lesson Quick Scroll */}
       <Section title="探索课程" subtitle="21 节课，从图形概括到综合创作" viewAllHref="/courses">
@@ -94,6 +81,31 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Skill Cards */}
+      <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，21 张卡牌见证成长" viewAllHref="/profile/skills">
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
+          {displaySkills.map((skill) => (
+            <div key={skill.name} className="w-[140px] shrink-0 snap-start">
+              <SkillCardMini
+                name={skill.name}
+                rarity={skill.rarity}
+                image={skill.image}
+                description={skill.description}
+              />
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Featured Courses */}
+      <Section title="两大课程体系" subtitle="从基础能力到创造性思维，系统培养 AI 时代的小创作者" viewAllHref="/courses">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {FALLBACK_COURSES.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))}
+        </div>
+      </Section>
+
       {/* Value Props */}
       <Section title="为什么选择 AI 创作课" subtitle="不只是学画画，更是培养 AI 时代的核心创造力" variant="muted">
         <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -111,36 +123,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Latest Lessons */}
-      <Section title="最新课程" subtitle="从第一节课开始你的创作之旅" viewAllHref="/courses">
-        <div className="space-y-1 max-w-3xl mx-auto">
-          {allLessons.map((lesson, i) => (
-            <LessonRow key={lesson.id} lesson={lesson} index={i} />
-          ))}
-        </div>
-      </Section>
-
       {/* Student Works */}
       <Section title="学员作品" subtitle="每个孩子与 AI 协作的独特创意结晶" viewAllHref="/gallery" variant="muted">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {FALLBACK_TEACHER_WORKS.slice(0, 6).map((work) => (
             <WorkCard key={work.id} work={work} />
-          ))}
-        </div>
-      </Section>
-
-      {/* Skill Cards */}
-      <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，21 张卡牌见证成长" viewAllHref="/profile/skills">
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
-          {displaySkills.map((skill) => (
-            <div key={skill.name} className="w-[140px] shrink-0 snap-start">
-              <SkillCardMini
-                name={skill.name}
-                rarity={skill.rarity}
-                image={skill.image}
-                description={skill.description}
-              />
-            </div>
           ))}
         </div>
       </Section>
