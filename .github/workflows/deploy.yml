@@ -31,7 +31,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: https://dummy.supabase.co
           NEXT_PUBLIC_SUPABASE_ANON_KEY: dummy-key
           NEXT_PUBLIC_BASE_PATH: /art-platform
-          NEXT_PUBLIC_VIDEO_BASE_URL: https://github.com/leonartksmao-tech/art-platform/releases/download/videos-v1
+          NEXT_PUBLIC_VIDEO_BASE_URL: https://pub-2eaadcfcee234363a8cc32f7fb78acce.r2.dev
           DATABASE_URL: postgresql://dummy:dummy@localhost:5432/dummy
       - uses: actions/upload-pages-artifact@v3
         with:
