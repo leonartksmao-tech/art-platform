@@ -64,8 +64,8 @@ export const FALLBACK_TEACHER_WORKS = [
     id: "teacher-butterfly",
     title: "蝴蝶 · 教师示范",
     story: "对称是自然界的魔法。猫猫老师用一只蝴蝶的创作过程，展示了如何用图形概括 + 色彩渐变构建出翅膀的层次感。",
-    finalWorkUrl: "/works/teacher/蝴蝶.png",
-    gallery: ["/works/teacher/蝴蝶.png"],
+    finalWorkUrl: "/works/teacher/蝴蝶.jpg",
+    gallery: ["/works/teacher/蝴蝶.jpg"],
     likesCount: 72,
     commentsCount: 9,
     isFeatured: true,
@@ -76,7 +76,7 @@ export const FALLBACK_TEACHER_WORKS = [
   {
     id: "teacher-doll",
     title: "人偶制作 · 教师示范",
-    story: "从布料选择到服饰设计，猫猫老师示范如何把一个简单的人偶变成有性格的角色。重点训练「人物设计」与材质表达的整合能力。",
+    story: "从身体结构到服饰搭配，猫猫老师示范如何用关节纸偶把人体知识变成一场可动可玩的创作游戏。",
     finalWorkUrl: "/works/teacher/img20251031_13423301.jpg",
     gallery: [
       "/works/teacher/img20251031_13423301.jpg",
@@ -94,7 +94,7 @@ export const FALLBACK_TEACHER_WORKS = [
   {
     id: "teacher-mask",
     title: "面具设计 · 教师示范",
-    story: "面具是角色创造的终极挑战。猫猫老师示范如何用几何分割 + 装饰元素设计一个充满戏剧张力的面具，让平面的纸变成有灵魂的角色。",
+    story: "面具是角色创造的终极挑战。猫猫老师示范如何用几何分割 + 装饰元素设计一个充满戏剧张力的面具。",
     finalWorkUrl: "/works/teacher/DSC02116.JPG",
     gallery: ["/works/teacher/DSC02116.JPG", "/works/teacher/DSC02018.jpg"],
     likesCount: 91,
@@ -107,7 +107,7 @@ export const FALLBACK_TEACHER_WORKS = [
   {
     id: "teacher-sticker",
     title: "动物贴纸 · 教师示范",
-    story: "如何把复杂的动物简化成有辨识度的贴纸？猫猫老师用图形概括法，把每个动物拆解成基本图形再重组，让3岁的孩子也能画出自己的动物王国。",
+    story: "如何把复杂的动物简化成有辨识度的贴纸？猫猫老师用图形概括法，把每个动物拆解成基本图形再重组。",
     finalWorkUrl: "/works/teacher/img20251016_14102913.jpg",
     gallery: ["/works/teacher/img20251016_14102913.jpg", "/works/teacher/e95d6686.jpg"],
     likesCount: 78,
@@ -120,7 +120,7 @@ export const FALLBACK_TEACHER_WORKS = [
   {
     id: "teacher-pattern",
     title: "四方连续 · 教师示范",
-    story: "从单元图形到无限延伸的图案，猫猫老师示范四方连续的底层逻辑——重复、镜像、旋转，三种方式让一个简单的图形变成一整块漂亮的布料设计。",
+    story: "从单元图形到无限延伸的图案，猫猫老师示范四方连续的底层逻辑——重复、镜像、旋转，三种方式让简单的图形变成漂亮的布料设计。",
     finalWorkUrl: "/works/teacher/111.jpg",
     gallery: ["/works/teacher/111.jpg", "/works/teacher/img053.jpg"],
     likesCount: 83,
@@ -133,16 +133,30 @@ export const FALLBACK_TEACHER_WORKS = [
 ];
 
 export const FALLBACK_WORKS = [
-  { id: "demo-1", title: "我的神奇早餐", story: "用食物拼出一幅可以吃的画，早餐变成了艺术创作！面包是天空，鸡蛋是太阳，蔬菜变成了小动物。", finalWorkUrl: "/works/breakfast1.jpg", gallery: ["/works/breakfast1b.jpg", "/works/breakfast1.jpg"], likesCount: 24, commentsCount: 5, isFeatured: true, createdAt: "2026-03-15T08:00:00Z", profile: { nickname: "小厨神乐乐" }, lesson: { title: "吃点什么" } },
-  { id: "demo-2", title: "神奇早餐第二弹", story: "把三明治变成了海底世界，海苔是海草，胡萝卜切成小鱼，一口吃掉整个海洋！", finalWorkUrl: "/works/breakfast2.jpg", gallery: ["/works/breakfast2b.jpg", "/works/breakfast2.jpg"], likesCount: 18, commentsCount: 3, isFeatured: false, createdAt: "2026-03-20T10:30:00Z", profile: { nickname: "创意小可" }, lesson: { title: "吃点什么" } },
-  { id: "demo-3", title: "蝴蝶翅膀设计", story: "用对称的图案和色彩设计了一对独一无二的蝴蝶翅膀，每一片花纹都是自己画的。", finalWorkUrl: "/works/butterfly1.jpg", gallery: ["/works/butterfly1b.jpg", "/works/butterfly1.jpg"], likesCount: 31, commentsCount: 8, isFeatured: true, createdAt: "2026-04-02T14:00:00Z", profile: { nickname: "色彩大师航航" }, lesson: { title: "蝴蝶" } },
-  { id: "demo-4", title: "对称蝴蝶", story: "左边和右边的花纹要一模一样才好看，我学会了对称设计，这只蝴蝶可以飞起来了。", finalWorkUrl: "/works/butterfly2.jpg", gallery: ["/works/butterfly2b.jpg", "/works/butterfly2.jpg"], likesCount: 15, commentsCount: 4, isFeatured: false, createdAt: "2026-04-05T09:00:00Z", profile: { nickname: "小小设计师" }, lesson: { title: "蝴蝶" } },
-  { id: "demo-5", title: "人偶创作", story: "用布料和毛线做的小人偶，穿上了我自己设计的衣服，头发是用妈妈的毛线编的。", finalWorkUrl: "/works/doll1.jpg", gallery: ["/works/doll1b.jpg", "/works/doll1.jpg"], likesCount: 22, commentsCount: 6, isFeatured: true, createdAt: "2026-03-28T11:00:00Z", profile: { nickname: "巧手果果" }, lesson: { title: "人偶制作" } },
-  { id: "demo-6", title: "时装人偶", story: "给娃娃设计了一套彩虹连衣裙，搭配了同色系的小包包和发饰。", finalWorkUrl: "/works/doll2.jpg", gallery: ["/works/doll2b.jpg", "/works/doll2.jpg"], likesCount: 28, commentsCount: 7, isFeatured: false, createdAt: "2026-04-10T16:00:00Z", profile: { nickname: "小小裁缝" }, lesson: { title: "人偶制作" } },
-  { id: "demo-7", title: "面具设计", story: "设计了一个神秘的面具，用了金色和银色的颜料，戴上去就像从童话里走出来的人物。", finalWorkUrl: "/works/mask1.jpg", gallery: ["/works/mask1b.jpg", "/works/mask1.jpg"], likesCount: 35, commentsCount: 9, isFeatured: true, createdAt: "2026-04-15T09:30:00Z", profile: { nickname: "面具大师" }, lesson: { title: "我设计的面具" } },
-  { id: "demo-8", title: "奇幻面具", story: "用羽毛、亮片和彩纸做了一只孔雀面具，戴上它就可以变身成森林之王。", finalWorkUrl: "/works/mask2.jpg", gallery: ["/works/mask2b.jpg", "/works/mask2.jpg"], likesCount: 19, commentsCount: 4, isFeatured: false, createdAt: "2026-04-18T14:30:00Z", profile: { nickname: "孔雀公主" }, lesson: { title: "我设计的面具" } },
-  { id: "demo-9", title: "动物贴纸", story: "设计了一套森林动物贴纸，有小狐狸、小兔子和一只胖胖的熊，都可以贴在我的画本上。", finalWorkUrl: "/works/sticker1.jpg", gallery: ["/works/sticker1b.jpg", "/works/sticker1.jpg"], likesCount: 26, commentsCount: 5, isFeatured: true, createdAt: "2026-03-10T10:00:00Z", profile: { nickname: "动物小画家" }, lesson: { title: "动物贴纸" } },
-  { id: "demo-10", title: "海底贴纸", story: "画了各种各样的海底生物贴纸，海豚、小丑鱼、海龟，还有一只笑眯眯的章鱼。", finalWorkUrl: "/works/sticker2.jpg", gallery: ["/works/sticker2b.jpg", "/works/sticker2.jpg"], likesCount: 14, commentsCount: 2, isFeatured: false, createdAt: "2026-03-12T15:30:00Z", profile: { nickname: "海洋使者" }, lesson: { title: "动物贴纸" } },
-  { id: "demo-11", title: "四方连续图案", story: "设计了一个可以无限重复的花纹图案，每一格都严丝合缝，铺在一起就像一块漂亮的花布。", finalWorkUrl: "/works/pattern1.jpg", gallery: ["/works/pattern1b.jpg", "/works/pattern1.jpg"], likesCount: 20, commentsCount: 3, isFeatured: true, createdAt: "2026-04-22T10:00:00Z", profile: { nickname: "图案工匠" }, lesson: { title: "四方连续" } },
-  { id: "demo-12", title: "花纹布料", story: "用几何图形设计了一块可以做成裙子的布料图案，菱形和三角形交替排列，配色是粉色和金色。", finalWorkUrl: "/works/pattern2.jpg", gallery: ["/works/pattern2b.jpg", "/works/pattern2.jpg"], likesCount: 17, commentsCount: 4, isFeatured: false, createdAt: "2026-04-25T11:30:00Z", profile: { nickname: "布料设计师" }, lesson: { title: "四方连续" } },
+  // 吃点什么 — 学生作品
+  { id: "sw-breakfast-1", title: "我的神奇早餐", story: "用食物拼出一幅可以吃的画——面包是天空，鸡蛋是太阳，蔬菜变成了小动物。每一口都是一个故事。", finalWorkUrl: "/works/breakfast/1.jpg", gallery: ["/works/breakfast/2.jpg", "/works/breakfast/3.jpg"], likesCount: 24, commentsCount: 5, isFeatured: true, createdAt: "2026-03-15T08:00:00Z", profile: { nickname: "小厨神乐乐" }, lesson: { title: "吃点什么" } },
+  { id: "sw-breakfast-2", title: "早餐动物园", story: "把三明治变成了海底世界，海苔是海草，胡萝卜切成小鱼——一口吃掉整个海洋！", finalWorkUrl: "/works/breakfast/enen.jpg", gallery: ["/works/breakfast/4.jpg", "/works/breakfast/5.jpg"], likesCount: 18, commentsCount: 3, isFeatured: false, createdAt: "2026-03-20T10:30:00Z", profile: { nickname: "创意小可" }, lesson: { title: "吃点什么" } },
+  { id: "sw-breakfast-3", title: "色彩早餐拼盘", story: "妈妈的早餐变成了我的画布，每一种食物都是一种颜色，拼在一起就是最好看的早餐画。", finalWorkUrl: "/works/breakfast/nini.jpg", gallery: ["/works/breakfast/img20251016_14092309.jpg", "/works/breakfast/img20251016_14041318.jpg"], likesCount: 15, commentsCount: 4, isFeatured: false, createdAt: "2026-04-05T09:00:00Z", profile: { nickname: "妮妮小画家" }, lesson: { title: "吃点什么" } },
+
+  // 蝴蝶 — 学生作品
+  { id: "sw-butterfly-1", title: "梦幻蝴蝶翅膀", story: "用对称的花纹和渐变色设计了独一无二的蝴蝶翅膀，每一片鳞片都是自己画的。", finalWorkUrl: "/works/butterfly/img20251031_13551636.jpg", gallery: ["/works/butterfly/img20251031_14022001.jpg", "/works/butterfly/img20251031_14030122.jpg"], likesCount: 31, commentsCount: 8, isFeatured: true, createdAt: "2026-04-02T14:00:00Z", profile: { nickname: "色彩大师航航" }, lesson: { title: "蝴蝶" } },
+  { id: "sw-butterfly-2", title: "彩虹蝴蝶", story: "左边和右边的花纹要一模一样才好看，我学会了对称设计，这只蝴蝶可以飞起来了。", finalWorkUrl: "/works/butterfly/img20251031_14034476.jpg", gallery: ["/works/butterfly/img20251031_13572932.jpg", "/works/butterfly/img20251031_14013946.jpg"], likesCount: 15, commentsCount: 4, isFeatured: false, createdAt: "2026-04-05T09:00:00Z", profile: { nickname: "小小设计师" }, lesson: { title: "蝴蝶" } },
+
+  // 人偶制作 — 学生作品
+  { id: "sw-doll-1", title: "关节纸偶", story: "用卡纸和两脚钉做的小人偶，手脚都能动，穿上了我自己设计的衣服，头发是用妈妈的毛线编的。", finalWorkUrl: "/works/doll/img20251031_13404933.jpg", gallery: ["/works/doll/img20251031_13473374.jpg", "/works/doll/img20251031_13481917.jpg"], likesCount: 22, commentsCount: 6, isFeatured: true, createdAt: "2026-03-28T11:00:00Z", profile: { nickname: "巧手果果" }, lesson: { title: "人偶制作" } },
+  { id: "sw-doll-2", title: "时装人偶", story: "给纸偶设计了一套彩虹连衣裙，搭配了同色系的小包包和发饰，我的小人偶是世界上最时髦的。", finalWorkUrl: "/works/doll/img20251031_13355815.jpg", gallery: ["/works/doll/img20251031_13511298.jpg", "/works/doll/img20251031_13520186.jpg"], likesCount: 28, commentsCount: 7, isFeatured: false, createdAt: "2026-04-10T16:00:00Z", profile: { nickname: "小小裁缝" }, lesson: { title: "人偶制作" } },
+
+  // 我设计的面具 — 学生作品
+  { id: "sw-mask-1", title: "戏剧面具", story: "设计了一个充满戏剧感的面具，用了金色和银色的颜料，戴上去就像从童话里走出来的人物。", finalWorkUrl: "/works/mask/DSC02232.jpg", gallery: ["/works/mask/DSC02008.jpg", "/works/mask/dqs 2025-11-08 172743.492.jpg"], likesCount: 35, commentsCount: 9, isFeatured: true, createdAt: "2026-04-15T09:30:00Z", profile: { nickname: "面具大师" }, lesson: { title: "我设计的面具" } },
+  { id: "sw-mask-2", title: "奇幻面具", story: "用羽毛、亮片和彩纸做了一只孔雀面具，戴上它就可以变身成森林之王。", finalWorkUrl: "/works/mask/DSC02018.jpg", gallery: ["/works/mask/e29dd11b0b82b70012f629edf21e690c.jpg", "/works/mask/DSC02035.jpg"], likesCount: 19, commentsCount: 4, isFeatured: false, createdAt: "2026-04-18T14:30:00Z", profile: { nickname: "孔雀公主" }, lesson: { title: "我设计的面具" } },
+  { id: "sw-mask-3", title: "几何面具", story: "用几何图形设计的抽象面具，三角形是眼睛，菱形是嘴巴——数学和艺术的完美结合。", finalWorkUrl: "/works/mask/8576dc9f5894768534d25688b94a7357.jpg", gallery: ["/works/mask/DSC01978.jpg", "/works/mask/DSC02026.jpg"], likesCount: 27, commentsCount: 6, isFeatured: false, createdAt: "2026-05-02T10:00:00Z", profile: { nickname: "几何小天才" }, lesson: { title: "我设计的面具" } },
+
+  // 动物贴纸 — 学生作品
+  { id: "sw-sticker-1", title: "森林动物贴纸", story: "设计了一套森林动物贴纸，有小狐狸、小兔子和一只胖胖的熊，都可以贴在我的画本上。", finalWorkUrl: "/works/sticker/img20250912_20082796.jpg", gallery: ["/works/sticker/img20250912_20133889.jpg", "/works/sticker/img20250912_20150879.jpg"], likesCount: 26, commentsCount: 5, isFeatured: true, createdAt: "2026-03-10T10:00:00Z", profile: { nickname: "动物小画家" }, lesson: { title: "动物贴纸" } },
+  { id: "sw-sticker-2", title: "海底贴纸", story: "画了各种各样的海底生物贴纸，海豚、小丑鱼、海龟，还有一只笑眯眯的章鱼。", finalWorkUrl: "/works/sticker/img20250912_20114460.jpg", gallery: ["/works/sticker/img20250912_20094965.jpg"], likesCount: 14, commentsCount: 2, isFeatured: false, createdAt: "2026-03-12T15:30:00Z", profile: { nickname: "海洋使者" }, lesson: { title: "动物贴纸" } },
+
+  // 四方连续 — 学生作品
+  { id: "sw-pattern-1", title: "几何花纹布料", story: "用菱形和三角形设计了一块可以无限延伸的布料图案，配色是粉色和金色，做裙子一定很好看。", finalWorkUrl: "/works/pattern/111.jpg", gallery: ["/works/pattern/img055.jpg", "/works/pattern/img056.jpg"], likesCount: 20, commentsCount: 3, isFeatured: true, createdAt: "2026-04-22T10:00:00Z", profile: { nickname: "图案工匠" }, lesson: { title: "四方连续" } },
+  { id: "sw-pattern-2", title: "花花连续图案", story: "设计了一个可以无限重复的花纹图案，每一格都严丝合缝，铺在一起就像一块漂亮的花布。", finalWorkUrl: "/works/pattern/澄.jpg", gallery: ["/works/pattern/好好.jpg", "/works/pattern/小可爱.jpg"], likesCount: 32, commentsCount: 7, isFeatured: true, createdAt: "2026-05-01T14:00:00Z", profile: { nickname: "澄澄" }, lesson: { title: "四方连续" } },
+  { id: "sw-pattern-3", title: "彩虹四方连续", story: "用彩虹的颜色排列成重复图案，每一行都不同但又能完美接在一起，像魔法一样。", finalWorkUrl: "/works/pattern/吴若浠.jpg", gallery: ["/works/pattern/鸽子.jpg", "/works/pattern/小可爱.jpg"], likesCount: 17, commentsCount: 4, isFeatured: false, createdAt: "2026-05-05T11:30:00Z", profile: { nickname: "若浠" }, lesson: { title: "四方连续" } },
 ];

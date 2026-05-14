@@ -1,0 +1,881 @@
+{
+  "breakfast": [
+    {
+      "path": "/works/breakfast/1.jpg",
+      "original": "1.jpg",
+      "size_kb": 268
+    },
+    {
+      "path": "/works/breakfast/2.jpg",
+      "original": "2.jpg",
+      "size_kb": 279
+    },
+    {
+      "path": "/works/breakfast/3.jpg",
+      "original": "3.jpg",
+      "size_kb": 292
+    },
+    {
+      "path": "/works/breakfast/4.jpg",
+      "original": "4.jpg",
+      "size_kb": 244
+    },
+    {
+      "path": "/works/breakfast/5.jpg",
+      "original": "5.jpg",
+      "size_kb": 264
+    },
+    {
+      "path": "/works/breakfast/6.jpg",
+      "original": "6.jpg",
+      "size_kb": 226
+    },
+    {
+      "path": "/works/breakfast/7.jpg",
+      "original": "7.jpg",
+      "size_kb": 220
+    },
+    {
+      "path": "/works/breakfast/8.jpg",
+      "original": "8.jpg",
+      "size_kb": 266
+    },
+    {
+      "path": "/works/breakfast/dd.jpg",
+      "original": "dd.jpg",
+      "size_kb": 255
+    },
+    {
+      "path": "/works/breakfast/enen.jpg",
+      "original": "enen.jpg",
+      "size_kb": 296
+    },
+    {
+      "path": "/works/breakfast/img20251016_14030050.jpg",
+      "original": "img20251016_14030050.jpg",
+      "size_kb": 249
+    },
+    {
+      "path": "/works/breakfast/img20251016_14041318.jpg",
+      "original": "img20251016_14041318.jpg",
+      "size_kb": 272
+    },
+    {
+      "path": "/works/breakfast/img20251016_14092309.jpg",
+      "original": "img20251016_14092309.jpg",
+      "size_kb": 276
+    },
+    {
+      "path": "/works/breakfast/img20251016_14102913.jpg",
+      "original": "img20251016_14102913.jpg",
+      "size_kb": 251
+    },
+    {
+      "path": "/works/breakfast/nini.jpg",
+      "original": "nini.jpg",
+      "size_kb": 313
+    },
+    {
+      "path": "/works/breakfast/qq.jpg",
+      "original": "qq.jpg",
+      "size_kb": 248
+    }
+  ],
+  "butterfly": [
+    {
+      "path": "/works/butterfly/img20251031_13551636.jpg",
+      "original": "img20251031_13551636.jpg",
+      "size_kb": 276
+    },
+    {
+      "path": "/works/butterfly/img20251031_13572932.jpg",
+      "original": "img20251031_13572932.jpg",
+      "size_kb": 236
+    },
+    {
+      "path": "/works/butterfly/img20251031_14000156.jpg",
+      "original": "img20251031_14000156.jpg",
+      "size_kb": 221
+    },
+    {
+      "path": "/works/butterfly/img20251031_14005489.jpg",
+      "original": "img20251031_14005489.jpg",
+      "size_kb": 225
+    },
+    {
+      "path": "/works/butterfly/img20251031_14013946.jpg",
+      "original": "img20251031_14013946.jpg",
+      "size_kb": 225
+    },
+    {
+      "path": "/works/butterfly/img20251031_14022001.jpg",
+      "original": "img20251031_14022001.jpg",
+      "size_kb": 260
+    },
+    {
+      "path": "/works/butterfly/img20251031_14030122.jpg",
+      "original": "img20251031_14030122.jpg",
+      "size_kb": 250
+    },
+    {
+      "path": "/works/butterfly/img20251031_14034476.jpg",
+      "original": "img20251031_14034476.jpg",
+      "size_kb": 263
+    },
+    {
+      "path": "/works/butterfly/img20251031_14041737.jpg",
+      "original": "img20251031_14041737.jpg",
+      "size_kb": 154
+    }
+  ],
+  "doll": [
+    {
+      "path": "/works/doll/img20251031_13355815.jpg",
+      "original": "img20251031_13355815.jpg",
+      "size_kb": 175
+    },
+    {
+      "path": "/works/doll/img20251031_13404933.jpg",
+      "original": "img20251031_13404933.jpg",
+      "size_kb": 176
+    },
+    {
+      "path": "/works/doll/img20251031_13423301.jpg",
+      "original": "img20251031_13423301.jpg",
+      "size_kb": 133
+    },
+    {
+      "path": "/works/doll/img20251031_13430651.jpg",
+      "original": "img20251031_13430651.jpg",
+      "size_kb": 137
+    },
+    {
+      "path": "/works/doll/img20251031_13450053.jpg",
+      "original": "img20251031_13450053.jpg",
+      "size_kb": 130
+    },
+    {
+      "path": "/works/doll/img20251031_13462383.jpg",
+      "original": "img20251031_13462383.jpg",
+      "size_kb": 92
+    },
+    {
+      "path": "/works/doll/img20251031_13473374.jpg",
+      "original": "img20251031_13473374.jpg",
+      "size_kb": 151
+    },
+    {
+      "path": "/works/doll/img20251031_13481917.jpg",
+      "original": "img20251031_13481917.jpg",
+      "size_kb": 148
+    },
+    {
+      "path": "/works/doll/img20251031_13511298.jpg",
+      "original": "img20251031_13511298.jpg",
+      "size_kb": 158
+    },
+    {
+      "path": "/works/doll/img20251031_13520186.jpg",
+      "original": "img20251031_13520186.jpg",
+      "size_kb": 154
+    },
+    {
+      "path": "/works/doll/img20251031_13524685.jpg",
+      "original": "img20251031_13524685.jpg",
+      "size_kb": 145
+    }
+  ],
+  "mask": [
+    {
+      "path": "/works/mask/08357fc8d25874e6a778942dba7ad4f6.jpg",
+      "original": "08357fc8d25874e6a778942dba7ad4f6.jpg",
+      "size_kb": 177
+    },
+    {
+      "path": "/works/mask/0bf7d676dbe865008bb6c2995e40d3d1.jpg",
+      "original": "0bf7d676dbe865008bb6c2995e40d3d1.jpg",
+      "size_kb": 73
+    },
+    {
+      "path": "/works/mask/0ed81e087e9329b5ca6e385df1905d80.jpg",
+      "original": "0ed81e087e9329b5ca6e385df1905d80.jpg",
+      "size_kb": 103
+    },
+    {
+      "path": "/works/mask/0f847438140817d39eb09952ad73a839.jpg",
+      "original": "0f847438140817d39eb09952ad73a839.jpg",
+      "size_kb": 89
+    },
+    {
+      "path": "/works/mask/16f03c9cde51d8f65cb9fb1541c632b0.jpg",
+      "original": "16f03c9cde51d8f65cb9fb1541c632b0.jpg",
+      "size_kb": 191
+    },
+    {
+      "path": "/works/mask/19c99828978777f37c35487de29bd6ad.jpg",
+      "original": "19c99828978777f37c35487de29bd6ad.jpg",
+      "size_kb": 103
+    },
+    {
+      "path": "/works/mask/1f6c907504698a89cf09150a187405ef.jpg",
+      "original": "1f6c907504698a89cf09150a187405ef.jpg",
+      "size_kb": 57
+    },
+    {
+      "path": "/works/mask/2101b5b1fcb99d67e41722a67d42c24b.jpg",
+      "original": "2101b5b1fcb99d67e41722a67d42c24b.jpg",
+      "size_kb": 47
+    },
+    {
+      "path": "/works/mask/2a9a072a8cb41609d939c743f5848052.jpg",
+      "original": "2a9a072a8cb41609d939c743f5848052.jpg",
+      "size_kb": 128
+    },
+    {
+      "path": "/works/mask/2c8129d42e6e14444b75f20e36119514.jpg",
+      "original": "2c8129d42e6e14444b75f20e36119514.jpg",
+      "size_kb": 58
+    },
+    {
+      "path": "/works/mask/2fe60d16b61398e2ed03b6b21c359605.jpg",
+      "original": "2fe60d16b61398e2ed03b6b21c359605.jpg",
+      "size_kb": 47
+    },
+    {
+      "path": "/works/mask/30d7c4fb738e9ec239fab645782962d9.jpg",
+      "original": "30d7c4fb738e9ec239fab645782962d9.jpg",
+      "size_kb": 69
+    },
+    {
+      "path": "/works/mask/36b0fab4036492cda6ea4ad0463d6a66.jpg",
+      "original": "36b0fab4036492cda6ea4ad0463d6a66.jpg",
+      "size_kb": 76
+    },
+    {
+      "path": "/works/mask/3eb3a743b9b92d9d0993749509cc7792.jpg",
+      "original": "3eb3a743b9b92d9d0993749509cc7792.jpg",
+      "size_kb": 165
+    },
+    {
+      "path": "/works/mask/49698cb58399874367ac37eebb7c1c0c.jpg",
+      "original": "49698cb58399874367ac37eebb7c1c0c.jpg",
+      "size_kb": 148
+    },
+    {
+      "path": "/works/mask/4f5350f91b0fb9e18f0f3ee7c0f09d66.jpg",
+      "original": "4f5350f91b0fb9e18f0f3ee7c0f09d66.jpg",
+      "size_kb": 40
+    },
+    {
+      "path": "/works/mask/63ebf836a55e57631801ff59fb5a8a46.jpg",
+      "original": "63ebf836a55e57631801ff59fb5a8a46.jpg",
+      "size_kb": 24
+    },
+    {
+      "path": "/works/mask/6df88702ec0e319b224be48d6343fcc6.jpg",
+      "original": "6df88702ec0e319b224be48d6343fcc6.jpg",
+      "size_kb": 77
+    },
+    {
+      "path": "/works/mask/71595b3f777815e053fa8678e90bb5ce.jpg",
+      "original": "71595b3f777815e053fa8678e90bb5ce.jpg",
+      "size_kb": 66
+    },
+    {
+      "path": "/works/mask/72961a84843a64b6dd6ec4d2c8ae84f4.jpg",
+      "original": "72961a84843a64b6dd6ec4d2c8ae84f4.jpg",
+      "size_kb": 73
+    },
+    {
+      "path": "/works/mask/7342a53c1893b2bdff08ee5d8c8b5e06.jpg",
+      "original": "7342a53c1893b2bdff08ee5d8c8b5e06.jpg",
+      "size_kb": 62
+    },
+    {
+      "path": "/works/mask/7493e35a97529e70f58b6e22bb7d6732.jpg",
+      "original": "7493e35a97529e70f58b6e22bb7d6732.jpg",
+      "size_kb": 93
+    },
+    {
+      "path": "/works/mask/7fa48f3b3368ac7aa68400d4512ebf78.jpg",
+      "original": "7fa48f3b3368ac7aa68400d4512ebf78.jpg",
+      "size_kb": 180
+    },
+    {
+      "path": "/works/mask/8332c3b525d3cc7226e025f22375e584.jpg",
+      "original": "8332c3b525d3cc7226e025f22375e584.jpg",
+      "size_kb": 142
+    },
+    {
+      "path": "/works/mask/834bba4a65bc5510b7cd10bb32a174ff.jpg",
+      "original": "834bba4a65bc5510b7cd10bb32a174ff.jpg",
+      "size_kb": 38
+    },
+    {
+      "path": "/works/mask/846bc355c513c880de35796774d47579-1.jpg",
+      "original": "846bc355c513c880de35796774d47579-1.jpg",
+      "size_kb": 29
+    },
+    {
+      "path": "/works/mask/8499859b03b4cc36d9dcff271834bfbf.jpg",
+      "original": "8499859b03b4cc36d9dcff271834bfbf.jpg",
+      "size_kb": 105
+    },
+    {
+      "path": "/works/mask/84a3fd318103475620f5f41539ee5aa1.jpg",
+      "original": "84a3fd318103475620f5f41539ee5aa1.jpg",
+      "size_kb": 112
+    },
+    {
+      "path": "/works/mask/84ed5958e1b5ec3174f76b957dd84c2d.jpg",
+      "original": "84ed5958e1b5ec3174f76b957dd84c2d.jpg",
+      "size_kb": 116
+    },
+    {
+      "path": "/works/mask/8576dc9f5894768534d25688b94a7357.jpg",
+      "original": "8576dc9f5894768534d25688b94a7357.jpg",
+      "size_kb": 364
+    },
+    {
+      "path": "/works/mask/8dba680f20b9f3d5da87b95713b3dbe1.jpg",
+      "original": "8dba680f20b9f3d5da87b95713b3dbe1.jpg",
+      "size_kb": 68
+    },
+    {
+      "path": "/works/mask/8dd2a486a3edef9a27317fb88d935902.jpg",
+      "original": "8dd2a486a3edef9a27317fb88d935902.jpg",
+      "size_kb": 34
+    },
+    {
+      "path": "/works/mask/8ff92c03f6460d1835b30e199383105d.jpg",
+      "original": "8ff92c03f6460d1835b30e199383105d.jpg",
+      "size_kb": 140
+    },
+    {
+      "path": "/works/mask/92c0c529ea22b7c1926224df687db3f0.jpg",
+      "original": "92c0c529ea22b7c1926224df687db3f0.jpg",
+      "size_kb": 191
+    },
+    {
+      "path": "/works/mask/9b087085cda5940ebeed8f0b1004c12b.jpg",
+      "original": "9b087085cda5940ebeed8f0b1004c12b.jpg",
+      "size_kb": 194
+    },
+    {
+      "path": "/works/mask/9c9f8d620abe9069d5eadef9edfb9f01.jpg",
+      "original": "9c9f8d620abe9069d5eadef9edfb9f01.jpg",
+      "size_kb": 139
+    },
+    {
+      "path": "/works/mask/9fc50ad1c59c2fbd460815e270a2f291.jpg",
+      "original": "9fc50ad1c59c2fbd460815e270a2f291.jpg",
+      "size_kb": 23
+    },
+    {
+      "path": "/works/mask/a9287e9fa92fe3ee1424074935a5dfa4.jpg",
+      "original": "a9287e9fa92fe3ee1424074935a5dfa4.jpg",
+      "size_kb": 124
+    },
+    {
+      "path": "/works/mask/ab4140f3ce093ab6c53c595cd39fbbd3.jpg",
+      "original": "ab4140f3ce093ab6c53c595cd39fbbd3.jpg",
+      "size_kb": 224
+    },
+    {
+      "path": "/works/mask/ab4af1d273f36b61148d757cb112b099.jpg",
+      "original": "ab4af1d273f36b61148d757cb112b099.jpg",
+      "size_kb": 93
+    },
+    {
+      "path": "/works/mask/b16910581459ee7de33d34e1a0292bf0.jpg",
+      "original": "b16910581459ee7de33d34e1a0292bf0.jpg",
+      "size_kb": 25
+    },
+    {
+      "path": "/works/mask/b80ea497bcf974bab01244cd2a35c0b4.jpg",
+      "original": "b80ea497bcf974bab01244cd2a35c0b4.jpg",
+      "size_kb": 59
+    },
+    {
+      "path": "/works/mask/ba7cb0529dea9468423e654675f272e1.jpg",
+      "original": "ba7cb0529dea9468423e654675f272e1.jpg",
+      "size_kb": 54
+    },
+    {
+      "path": "/works/mask/be826ec20d8cfdf9fe1a07f6dc3493e6.jpg",
+      "original": "be826ec20d8cfdf9fe1a07f6dc3493e6.jpg",
+      "size_kb": 146
+    },
+    {
+      "path": "/works/mask/c781535e2e510002b3b79b486d1e5b1e.jpg",
+      "original": "c781535e2e510002b3b79b486d1e5b1e.jpg",
+      "size_kb": 85
+    },
+    {
+      "path": "/works/mask/c786e99a0b0e2e5c4db57800d50ca9f8.jpg",
+      "original": "c786e99a0b0e2e5c4db57800d50ca9f8.jpg",
+      "size_kb": 161
+    },
+    {
+      "path": "/works/mask/d3349f6476413086bc1e20d6a2ad1456.jpg",
+      "original": "d3349f6476413086bc1e20d6a2ad1456.jpg",
+      "size_kb": 124
+    },
+    {
+      "path": "/works/mask/d4acb770c611d537335058d9ca6e809a.jpg",
+      "original": "d4acb770c611d537335058d9ca6e809a.jpg",
+      "size_kb": 137
+    },
+    {
+      "path": "/works/mask/d4c101890edab2a904e8b214a9aa98c0.jpg",
+      "original": "d4c101890edab2a904e8b214a9aa98c0.jpg",
+      "size_kb": 80
+    },
+    {
+      "path": "/works/mask/d4ed20e14de8d8176ef32d46e639e1ca.jpg",
+      "original": "d4ed20e14de8d8176ef32d46e639e1ca.jpg",
+      "size_kb": 131
+    },
+    {
+      "path": "/works/mask/dace91e1083a5047db42f9fc9004aebd.jpg",
+      "original": "dace91e1083a5047db42f9fc9004aebd.jpg",
+      "size_kb": 46
+    },
+    {
+      "path": "/works/mask/dc6ba605a2c90bcaca83cc4f3741e718.jpg",
+      "original": "dc6ba605a2c90bcaca83cc4f3741e718.jpg",
+      "size_kb": 15
+    },
+    {
+      "path": "/works/mask/dd65b5d5413dbd40a7c05802a298dbb7.jpg",
+      "original": "dd65b5d5413dbd40a7c05802a298dbb7.jpg",
+      "size_kb": 203
+    },
+    {
+      "path": "/works/mask/decef9660b36c112294cfce5c74d8971.jpg",
+      "original": "decef9660b36c112294cfce5c74d8971.jpg",
+      "size_kb": 37
+    },
+    {
+      "path": "/works/mask/e499617f7817b083253b86506d4173e1.jpg",
+      "original": "e499617f7817b083253b86506d4173e1.jpg",
+      "size_kb": 53
+    },
+    {
+      "path": "/works/mask/e76cafa9694098a792788feaac8bf06d.jpg",
+      "original": "e76cafa9694098a792788feaac8bf06d.jpg",
+      "size_kb": 105
+    },
+    {
+      "path": "/works/mask/e7922ad5ea4782f57c91406965460ce1.jpg",
+      "original": "e7922ad5ea4782f57c91406965460ce1.jpg",
+      "size_kb": 140
+    },
+    {
+      "path": "/works/mask/eaa4b6b538c3406bf68f87c1458ffbde.jpg",
+      "original": "eaa4b6b538c3406bf68f87c1458ffbde.jpg",
+      "size_kb": 76
+    },
+    {
+      "path": "/works/mask/ed1bfe65c862aa9b0b432ff1ff5325d7.jpg",
+      "original": "ed1bfe65c862aa9b0b432ff1ff5325d7.jpg",
+      "size_kb": 137
+    },
+    {
+      "path": "/works/mask/f6fc51335f613d41250165ae27921db7.jpg",
+      "original": "f6fc51335f613d41250165ae27921db7.jpg",
+      "size_kb": 247
+    },
+    {
+      "path": "/works/mask/fca05b75602ae5888b1b17296bf96e14.jpg",
+      "original": "fca05b75602ae5888b1b17296bf96e14.jpg",
+      "size_kb": 152
+    },
+    {
+      "path": "/works/mask/fcb3205be751d9a7d3229106e8fbe436.jpg",
+      "original": "fcb3205be751d9a7d3229106e8fbe436.jpg",
+      "size_kb": 132
+    },
+    {
+      "path": "/works/mask/fe5f76bbdebfba7eb057130669e29a8f.jpg",
+      "original": "fe5f76bbdebfba7eb057130669e29a8f.jpg",
+      "size_kb": 116
+    },
+    {
+      "path": "/works/mask/u=2586480736,1246063122&fm=253&app=138&f=JPEG.jpg",
+      "original": "u=2586480736,1246063122&fm=253&app=138&f=JPEG.jpeg",
+      "size_kb": 88
+    },
+    {
+      "path": "/works/mask/DSC01966.jpg",
+      "original": "DSC01966.JPG",
+      "size_kb": 160
+    },
+    {
+      "path": "/works/mask/DSC02018.jpg",
+      "original": "DSC02018.jpg",
+      "size_kb": 386
+    },
+    {
+      "path": "/works/mask/DSC02030.jpg",
+      "original": "DSC02030.JPG",
+      "size_kb": 204
+    },
+    {
+      "path": "/works/mask/DSC02058.jpg",
+      "original": "DSC02058.JPG",
+      "size_kb": 147
+    },
+    {
+      "path": "/works/mask/DSC02067.jpg",
+      "original": "DSC02067.jpg",
+      "size_kb": 121
+    },
+    {
+      "path": "/works/mask/DSC02116.jpg",
+      "original": "DSC02116.JPG",
+      "size_kb": 162
+    },
+    {
+      "path": "/works/mask/DSC02148.jpg",
+      "original": "DSC02148.JPG",
+      "size_kb": 151
+    },
+    {
+      "path": "/works/mask/DSC02232.jpg",
+      "original": "DSC02232.JPG",
+      "size_kb": 312
+    },
+    {
+      "path": "/works/mask/dqs 2025-11-06 170822.941.jpg",
+      "original": "dqs 2025-11-06 170822.941.JPG",
+      "size_kb": 291
+    },
+    {
+      "path": "/works/mask/dqs 2025-11-08 160636.162.jpg",
+      "original": "dqs 2025-11-08 160636.162.JPG",
+      "size_kb": 295
+    },
+    {
+      "path": "/works/mask/dqs 2025-11-08 174742.923.jpg",
+      "original": "dqs 2025-11-08 174742.923.JPG",
+      "size_kb": 257
+    },
+    {
+      "path": "/works/mask/dqs 2025-11-08 174747.117.jpg",
+      "original": "dqs 2025-11-08 174747.117.JPG",
+      "size_kb": 246
+    },
+    {
+      "path": "/works/mask/e29dd11b0b82b70012f629edf21e690c.jpg",
+      "original": "e29dd11b0b82b70012f629edf21e690c.JPG",
+      "size_kb": 306
+    },
+    {
+      "path": "/works/mask/DSC01894.jpg",
+      "original": "DSC01894.jpg",
+      "size_kb": 102
+    },
+    {
+      "path": "/works/mask/DSC01930.jpg",
+      "original": "DSC01930.JPG",
+      "size_kb": 126
+    },
+    {
+      "path": "/works/mask/DSC01931.jpg",
+      "original": "DSC01931.jpg",
+      "size_kb": 145
+    },
+    {
+      "path": "/works/mask/DSC01968.jpg",
+      "original": "DSC01968.JPG",
+      "size_kb": 172
+    },
+    {
+      "path": "/works/mask/DSC01978.jpg",
+      "original": "DSC01978.JPG",
+      "size_kb": 189
+    },
+    {
+      "path": "/works/mask/DSC01986.jpg",
+      "original": "DSC01986.JPG",
+      "size_kb": 161
+    },
+    {
+      "path": "/works/mask/DSC01987.jpg",
+      "original": "DSC01987.JPG",
+      "size_kb": 168
+    },
+    {
+      "path": "/works/mask/DSC02008.jpg",
+      "original": "DSC02008.JPG",
+      "size_kb": 350
+    },
+    {
+      "path": "/works/mask/DSC02026.jpg",
+      "original": "DSC02026.JPG",
+      "size_kb": 213
+    },
+    {
+      "path": "/works/mask/DSC02035.jpg",
+      "original": "DSC02035.JPG",
+      "size_kb": 215
+    },
+    {
+      "path": "/works/mask/DSC02084.jpg",
+      "original": "DSC02084.JPG",
+      "size_kb": 176
+    },
+    {
+      "path": "/works/mask/DSC02097.jpg",
+      "original": "DSC02097.JPG",
+      "size_kb": 102
+    },
+    {
+      "path": "/works/mask/DSC02135.jpg",
+      "original": "DSC02135.JPG",
+      "size_kb": 113
+    },
+    {
+      "path": "/works/mask/DSC02153.jpg",
+      "original": "DSC02153.JPG",
+      "size_kb": 113
+    },
+    {
+      "path": "/works/mask/DSC02187.jpg",
+      "original": "DSC02187.JPG",
+      "size_kb": 163
+    },
+    {
+      "path": "/works/mask/DSC02231.jpg",
+      "original": "DSC02231.JPG",
+      "size_kb": 306
+    },
+    {
+      "path": "/works/mask/dqs 2025-11-08 160644.619.jpg",
+      "original": "dqs 2025-11-08 160644.619.JPG",
+      "size_kb": 252
+    },
+    {
+      "path": "/works/mask/dqs 2025-11-08 172743.492.jpg",
+      "original": "dqs 2025-11-08 172743.492.JPG",
+      "size_kb": 314
+    },
+    {
+      "path": "/works/mask/dqs 2025-11-08 174750.258.jpg",
+      "original": "dqs 2025-11-08 174750.258.JPG",
+      "size_kb": 249
+    }
+  ],
+  "pattern": [
+    {
+      "path": "/works/pattern/111.jpg",
+      "original": "111.jpg",
+      "size_kb": 469
+    },
+    {
+      "path": "/works/pattern/img053 2.jpg",
+      "original": "img053 2.jpg",
+      "size_kb": 135
+    },
+    {
+      "path": "/works/pattern/img055.jpg",
+      "original": "img055.jpg",
+      "size_kb": 122
+    },
+    {
+      "path": "/works/pattern/img056.jpg",
+      "original": "img056.jpg",
+      "size_kb": 205
+    },
+    {
+      "path": "/works/pattern/img057.jpg",
+      "original": "img057.jpg",
+      "size_kb": 119
+    },
+    {
+      "path": "/works/pattern/zijing.jpg",
+      "original": "zijing.jpg",
+      "size_kb": 319
+    },
+    {
+      "path": "/works/pattern/东东.jpg",
+      "original": "东东.jpg",
+      "size_kb": 242
+    },
+    {
+      "path": "/works/pattern/吴若浠.jpg",
+      "original": "吴若浠.jpg",
+      "size_kb": 404
+    },
+    {
+      "path": "/works/pattern/墨墨.jpg",
+      "original": "墨墨.jpg",
+      "size_kb": 356
+    },
+    {
+      "path": "/works/pattern/好好.jpg",
+      "original": "好好.jpg",
+      "size_kb": 379
+    },
+    {
+      "path": "/works/pattern/妮妮.jpg",
+      "original": "妮妮.jpg",
+      "size_kb": 345
+    },
+    {
+      "path": "/works/pattern/小可爱.jpg",
+      "original": "小可爱.jpg",
+      "size_kb": 396
+    },
+    {
+      "path": "/works/pattern/小王子.jpg",
+      "original": "小王子.jpg",
+      "size_kb": 365
+    },
+    {
+      "path": "/works/pattern/恩妹 .jpg",
+      "original": "恩妹 .jpg",
+      "size_kb": 313
+    },
+    {
+      "path": "/works/pattern/桃子.jpg",
+      "original": "桃子.jpg",
+      "size_kb": 336
+    },
+    {
+      "path": "/works/pattern/泉泉.jpg",
+      "original": "泉泉.jpg",
+      "size_kb": 343
+    },
+    {
+      "path": "/works/pattern/澄.jpg",
+      "original": "澄.jpg",
+      "size_kb": 404
+    },
+    {
+      "path": "/works/pattern/熙宝.jpg",
+      "original": "熙宝.jpg",
+      "size_kb": 318
+    },
+    {
+      "path": "/works/pattern/石榴.jpg",
+      "original": "石榴.jpg",
+      "size_kb": 362
+    },
+    {
+      "path": "/works/pattern/秋秋.jpg",
+      "original": "秋秋.jpg",
+      "size_kb": 356
+    },
+    {
+      "path": "/works/pattern/芊芊.jpg",
+      "original": "芊芊.jpg",
+      "size_kb": 329
+    },
+    {
+      "path": "/works/pattern/鸽子.jpg",
+      "original": "鸽子.jpg",
+      "size_kb": 384
+    },
+    {
+      "path": "/works/pattern/齐齐.jpg",
+      "original": "齐齐.jpg",
+      "size_kb": 365
+    }
+  ],
+  "sticker": [
+    {
+      "path": "/works/sticker/img20250912_20082796.jpg",
+      "original": "img20250912_20082796.jpg",
+      "size_kb": 310
+    },
+    {
+      "path": "/works/sticker/img20250912_20094965.jpg",
+      "original": "img20250912_20094965.jpg",
+      "size_kb": 288
+    },
+    {
+      "path": "/works/sticker/img20250912_20114460.jpg",
+      "original": "img20250912_20114460.jpg",
+      "size_kb": 294
+    },
+    {
+      "path": "/works/sticker/img20250912_20133889.jpg",
+      "original": "img20250912_20133889.jpg",
+      "size_kb": 273
+    },
+    {
+      "path": "/works/sticker/img20250912_20150879.jpg",
+      "original": "img20250912_20150879.jpg",
+      "size_kb": 276
+    }
+  ],
+  "teacher": [
+    {
+      "path": "/works/teacher/111.jpg",
+      "original": "111.jpg",
+      "size_kb": 17314
+    },
+    {
+      "path": "/works/teacher/DSC02018.jpg",
+      "original": "DSC02018.jpg",
+      "size_kb": 4454
+    },
+    {
+      "path": "/works/teacher/DSC02116.jpg",
+      "original": "DSC02116.JPG",
+      "size_kb": 16727
+    },
+    {
+      "path": "/works/teacher/e95d6686ab814295c4030f64a7e0193c.jpg",
+      "original": "e95d6686ab814295c4030f64a7e0193c.heic",
+      "size_kb": 278
+    },
+    {
+      "path": "/works/teacher/img049.jpg",
+      "original": "img049.jpg",
+      "size_kb": 6302
+    },
+    {
+      "path": "/works/teacher/img050.jpg",
+      "original": "img050.jpg",
+      "size_kb": 10742
+    },
+    {
+      "path": "/works/teacher/img053.jpg",
+      "original": "img053.jpg",
+      "size_kb": 3921
+    },
+    {
+      "path": "/works/teacher/img20251016_14102913.jpg",
+      "original": "img20251016_14102913.jpg",
+      "size_kb": 3735
+    },
+    {
+      "path": "/works/teacher/img20251031_13423301.jpg",
+      "original": "img20251031_13423301.jpg",
+      "size_kb": 905
+    },
+    {
+      "path": "/works/teacher/img20251031_13430651.jpg",
+      "original": "img20251031_13430651.jpg",
+      "size_kb": 925
+    },
+    {
+      "path": "/works/teacher/img20251031_13450053.jpg",
+      "original": "img20251031_13450053.jpg",
+      "size_kb": 893
+    },
+    {
+      "path": "/works/teacher/img20251031_13462383.jpg",
+      "original": "img20251031_13462383.jpg",
+      "size_kb": 931
+    },
+    {
+      "path": "/works/teacher/蝴蝶.jpg",
+      "original": "蝴蝶.png",
+      "size_kb": 272
+    }
+  ]
+}
