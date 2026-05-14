@@ -33,14 +33,14 @@ export default function GalleryPage() {
   return (
     <div>
       <section className="py-14 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 text-center">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">作品广场</h1>
           <p className="mt-3 text-muted-foreground text-lg">点击每件教师示范作品，查看学员们的创意成果</p>
         </div>
       </section>
 
       <section className="py-14 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FilterPills options={filterOptions} selected={filter} onSelect={setFilter} className="mb-8" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((work) => (

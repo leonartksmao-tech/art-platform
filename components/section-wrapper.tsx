@@ -36,7 +36,7 @@ export function Section({
 }: SectionProps) {
   return (
     <section className={cn(variantStyles[variant], "py-14 sm:py-20", className)}>
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-end justify-between mb-8">
           <div>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">{title}</h2>

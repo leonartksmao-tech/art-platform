@@ -19,7 +19,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   return (
     <div>
       <div className="bg-muted py-14 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Badge variant="secondary" className="mb-4">
             创意绘本课
           </Badge>
@@ -40,7 +40,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
             <h2 className="text-xl font-bold mb-1">课程目录</h2>
