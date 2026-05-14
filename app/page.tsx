@@ -54,7 +54,7 @@ export default function HomePage() {
               <Link
                 key={lesson.id}
                 href={`/courses/${lesson.courseId}/learn?lesson=${lesson.id}`}
-                className="w-[288px] shrink-0 snap-start"
+                className="w-[240px] shrink-0 snap-start"
               >
                 <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
                   <div className="aspect-[3/4] flex items-center justify-center bg-gradient-to-br from-amber-400 to-rose-500">
@@ -77,7 +77,7 @@ export default function HomePage() {
       <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，21 张卡牌见证成长" viewAllHref="/profile/skills">
         <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
           {displaySkills.map((skill) => (
-            <div key={skill.name} className="w-[288px] shrink-0 snap-start">
+            <div key={skill.name} className="w-[240px] shrink-0 snap-start">
               <SkillCardMini
                 name={skill.name}
                 rarity={skill.rarity}
