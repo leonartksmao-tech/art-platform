@@ -71,7 +71,7 @@ export function LearnPageClient() {
         {"videoUrl" in lesson && (lesson as any).videoUrl && (
           <div className="rounded-xl overflow-hidden bg-black relative group">
             <video
-              src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL ?? ""}${(lesson as any).videoUrl}`}
+              src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL ?? ""}${(lesson as any).videoUrl}${process.env.NEXT_PUBLIC_VIDEO_TOKEN ? `?t=${process.env.NEXT_PUBLIC_VIDEO_TOKEN}` : ""}`}
               controls
               controlsList="nodownload"
               disablePictureInPicture
