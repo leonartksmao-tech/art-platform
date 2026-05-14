@@ -100,16 +100,16 @@ export default function HomePage() {
 
       {/* Value Props */}
       <Section title="为什么选择 AI 创作课" subtitle="不只是学画画，更是培养 AI 时代的核心创造力" variant="muted">
-        <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory no-scrollbar">
           {[
             { icon: "🎬", title: "AI 是画笔，孩子是导演", desc: "孩子画草图定故事方向，AI 辅助润色。AI 不会讲故事，孩子会。" },
             { icon: "👨‍👩‍👧", title: "亲子共创时光", desc: "家长文字 + 孩子草图 + 老师导读 + AI 落地。创作成为高质量陪伴。" },
             { icon: "🃏", title: "21 卡牌 + 12 成就", desc: "拆解之力、导演之眼、色彩之心……完成即解锁，收集见证成长。" },
           ].map((item) => (
-            <div key={item.title} className="rounded-2xl bg-card shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-6 text-center">
+            <div key={item.title} className="w-[220px] shrink-0 snap-start rounded-2xl bg-card shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-5 text-center">
               <p className="text-4xl mb-3">{item.icon}</p>
-              <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+              <h3 className="font-bold text-sm mb-1.5">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
