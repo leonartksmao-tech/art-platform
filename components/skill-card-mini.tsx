@@ -17,7 +17,7 @@ const rarityBadge: Record<string, string> = {
 };
 
 const rarityBorder: Record<string, string> = {
-  COMMON: "border-gray-300",
+  COMMON: "border-[#c0c5cc]",
   RARE: "border-blue-400",
   EPIC: "border-purple-400",
   LEGENDARY: "border-amber-400",
