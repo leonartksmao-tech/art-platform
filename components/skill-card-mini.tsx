@@ -47,7 +47,7 @@ export function SkillCardMini({ name, rarity, description, unlocked = true, imag
       className={`rounded-xl border p-4 text-center transition-all ${
         unlocked
           ? {
-              COMMON: "border-border bg-muted",
+              COMMON: "border-[#d1d5db] bg-white shadow-sm",
               RARE: "border-blue-200 bg-blue-50 text-blue-700",
               EPIC: "border-purple-200 bg-purple-50 text-purple-700",
               LEGENDARY: "border-amber-200 bg-amber-50 text-amber-700",
