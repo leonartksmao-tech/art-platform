@@ -39,13 +39,9 @@ export function Section({
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-end justify-between mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-lg tilt-1">🎨</span>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground/50">央美学院派</span>
-            </div>
             <h2 className="sketch-title-underline font-sketch text-2xl sm:text-3xl font-extrabold tracking-tight">{title}</h2>
             {subtitle && <p className={subtitleStyles[variant] + " mt-1"}>{subtitle}</p>}
-            </div>
+          </div>
           {viewAllHref && (
             <Button variant="ghost" size="sm" asChild>
               <Link href={viewAllHref} className="gap-1">
