@@ -17,7 +17,7 @@ export function LearnPageClient() {
   const allLessons = FALLBACK_COURSES.flatMap((c) =>
     c.lessons.map((l) => ({ ...l, courseId: c.id, courseTitle: c.title }))
   );
-  const lesson = allLessons.find((l) => l.id === lessonId);
+  const lesson = allLessons.find((l) => l.id === lessonId) as typeof allLessons[0] & { videoUrl?: string };
 
   if (!lesson) {
     return (
@@ -68,6 +68,21 @@ export function LearnPageClient() {
       </div>
 
       <div className="space-y-6">
+        {"videoUrl" in lesson && (lesson as any).videoUrl && (
+          <div className="rounded-xl overflow-hidden bg-black">
+            <video
+              src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL ?? ""}${(lesson as any).videoUrl}`}
+              controls
+              className="w-full aspect-video"
+              poster={"image" in lesson ? (lesson as any).image : undefined}
+              preload="metadata"
+              playsInline
+            >
+              您的浏览器不支持视频播放
+            </video>
+          </div>
+        )}
+
         <div className="bg-muted rounded-xl p-8 text-center">
           <p className="text-5xl mb-4">{getLessonIcon(lesson.workflowType)}</p>
           <h2 className="text-xl font-bold mb-2">核心思维训练</h2>
