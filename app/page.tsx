@@ -6,24 +6,14 @@ import { CourseCard } from "@/components/course-card";
 import { WorkCard } from "@/components/work-card";
 import { LessonRow } from "@/components/lesson-row";
 import { SkillCardMini } from "@/components/skill-card-mini";
-import { FALLBACK_COURSES, FALLBACK_TEACHER_WORKS } from "@/lib/data/fallback";
+import { FALLBACK_COURSES, FALLBACK_TEACHER_WORKS, FALLBACK_SKILL_CARDS } from "@/lib/data/fallback";
 
 export default function HomePage() {
   const allLessons = FALLBACK_COURSES.flatMap((c) =>
     c.lessons.slice(0, 3).map((l) => ({ ...l, courseId: c.id }))
   ).slice(0, 6);
 
-  const rarities = ["COMMON", "RARE", "EPIC", "LEGENDARY"] as const;
-  const skillCards = FALLBACK_COURSES.flatMap((c) =>
-    c.lessons.slice(0, 4).map((l, i) => ({
-      name: l.coreThinking,
-      rarity: rarities[i % rarities.length],
-    }))
-  );
-
-  const uniqueSkills = skillCards.filter(
-    (s, i, arr) => arr.findIndex((x) => x.name === s.name) === i
-  ).slice(0, 8);
+  const displaySkills = FALLBACK_SKILL_CARDS.slice(0, 8);
 
   return (
     <div>
@@ -106,11 +96,13 @@ export default function HomePage() {
       {/* Skill Cards */}
       <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，21 张卡牌见证成长" viewAllHref="/profile/skills">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          {uniqueSkills.map((skill) => (
+          {displaySkills.map((skill) => (
             <SkillCardMini
               key={skill.name}
               name={skill.name}
               rarity={skill.rarity}
+              image={skill.image}
+              description={skill.description}
             />
           ))}
         </div>

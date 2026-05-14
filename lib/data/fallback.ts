@@ -160,3 +160,17 @@ export const FALLBACK_WORKS = [
   { id: "sw-pattern-2", title: "花花连续图案", story: "设计了一个可以无限重复的花纹图案，每一格都严丝合缝，铺在一起就像一块漂亮的花布。", finalWorkUrl: "/works/pattern/澄.jpg", gallery: ["/works/pattern/好好.jpg", "/works/pattern/小可爱.jpg"], likesCount: 32, commentsCount: 7, isFeatured: true, createdAt: "2026-05-01T14:00:00Z", profile: { nickname: "澄澄" }, lesson: { title: "四方连续" } },
   { id: "sw-pattern-3", title: "彩虹四方连续", story: "用彩虹的颜色排列成重复图案，每一行都不同但又能完美接在一起，像魔法一样。", finalWorkUrl: "/works/pattern/吴若浠.jpg", gallery: ["/works/pattern/鸽子.jpg", "/works/pattern/小可爱.jpg"], likesCount: 17, commentsCount: 4, isFeatured: false, createdAt: "2026-05-05T11:30:00Z", profile: { nickname: "若浠" }, lesson: { title: "四方连续" } },
 ];
+
+export const FALLBACK_SKILL_CARDS = [
+  { name: "图形概括力", rarity: "COMMON" as const, image: "/skills/shape-generalization.jpg", description: "万事万物都可还原为基本图形" },
+  { name: "线条表达力", rarity: "COMMON" as const, image: "/skills/line-expression.jpg", description: "用线条的粗细、疏密、曲直来表达情感" },
+  { name: "色彩叙事力", rarity: "RARE" as const, image: "/skills/line-application.jpg", description: "从冷到暖、从地心到宇宙的色彩光谱" },
+  { name: "空间表达力", rarity: "RARE" as const, image: "/skills/spatial-expression.jpg", description: "建立近大远小、前后遮挡的空间意识" },
+  { name: "结构思维", rarity: "RARE" as const, image: "/skills/occlusion-relationship.jpg", description: "用关节和比例解构复杂人体与遮挡关系" },
+  { name: "人物塑造力", rarity: "EPIC" as const, image: "/skills/figure-motion.jpg", description: "从性格出发设计角色外观与动态" },
+  { name: "拼贴创作力", rarity: "EPIC" as const, image: "/skills/collage-making.jpg", description: "组合多元材料创造新的视觉叙事" },
+  { name: "图案设计力", rarity: "EPIC" as const, image: "/skills/tile-continuity.jpg", description: "理解重复、镜像、旋转的装饰规律" },
+  { name: "贴纸包装设计", rarity: "EPIC" as const, image: "/skills/sticker-packaging.jpg", description: "把图形概括应用到产品设计中" },
+  { name: "设计原理", rarity: "LEGENDARY" as const, image: "/skills/design-basics.jpg", description: "掌握设计的基本理论和美学原则" },
+  { name: "综合创作力", rarity: "LEGENDARY" as const, image: "/skills/design-fundamentals.jpg", description: "把全部技能整合成完整的个人作品" },
+];
