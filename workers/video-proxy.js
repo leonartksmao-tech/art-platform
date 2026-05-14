@@ -1,6 +1,7 @@
 // Cloudflare Worker: R2 视频代理 + 域名白名单 + 签名令牌
 
 const ALLOWED_ORIGINS = [
+  "maoart.online",
   "leonartksmao-tech.github.io",
 ];
 
