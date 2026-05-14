@@ -69,17 +69,27 @@ export function LearnPageClient() {
 
       <div className="space-y-6">
         {"videoUrl" in lesson && (lesson as any).videoUrl && (
-          <div className="rounded-xl overflow-hidden bg-black">
+          <div className="rounded-xl overflow-hidden bg-black relative group">
             <video
               src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL ?? ""}${(lesson as any).videoUrl}`}
               controls
+              controlsList="nodownload"
+              disablePictureInPicture
+              disableRemotePlayback
               className="w-full aspect-video"
               poster={"image" in lesson ? (lesson as any).image : undefined}
               preload="metadata"
               playsInline
+              onContextMenu={(e) => e.preventDefault()}
             >
               您的浏览器不支持视频播放
             </video>
+            {/* 防止长按/右键保存视频 */}
+            <div
+              className="absolute inset-0 z-10"
+              onContextMenu={(e) => e.preventDefault()}
+              style={{ pointerEvents: "none" }}
+            />
           </div>
         )}
 
