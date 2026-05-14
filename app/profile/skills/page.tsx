@@ -18,7 +18,7 @@ export default function SkillsPage() {
             <CardContent className="pt-4 flex items-start gap-4">
               {skill.image ? (
                 <div className="w-20 h-[105px] shrink-0 rounded-lg overflow-hidden relative bg-muted">
-                  <Image src={assetUrl(skill.image)} alt={skill.name} fill sizes="80px" className="object-cover" />
+                  <Image src={assetUrl(skill.image)} alt={skill.name} fill sizes="80px" className="object-cover img-bright" />
                 </div>
               ) : (
                 <div className="w-20 h-[105px] shrink-0 rounded-lg bg-muted flex items-center justify-center">

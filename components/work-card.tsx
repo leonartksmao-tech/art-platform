@@ -23,7 +23,7 @@ export function WorkCard({ work }: { work: Work }) {
             alt={work.title}
             fill
             sizes="(max-width: 640px) 50vw, 33vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-300 filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
+            className="object-cover img-bright group-hover:scale-105 transition-transform duration-300"
           />
           {work.isFeatured && (
             <Badge className="absolute top-3 left-3 bg-amber-500 text-white border-0 text-[10px]">

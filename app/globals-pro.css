@@ -58,3 +58,8 @@ body {
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.img-bright img,
+.img-bright {
+  filter: brightness(1.1) saturate(1.15) contrast(1.05);
+}

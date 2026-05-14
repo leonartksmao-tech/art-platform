@@ -30,7 +30,7 @@ export function SkillCardMini({ name, rarity, description, unlocked = true, imag
         unlocked ? rarityBorder[rarity] ?? rarityBorder.COMMON : "border-border opacity-50 grayscale"
       }`}>
         <div className="aspect-[3/4] relative bg-muted">
-          <Image src={assetUrl(image)} alt={name} fill sizes="25vw" className="object-cover" />
+          <Image src={assetUrl(image)} alt={name} fill sizes="25vw" className="object-cover img-bright" />
         </div>
         <div className="p-2 text-center bg-card">
           <p className="font-bold text-xs truncate">{name}</p>

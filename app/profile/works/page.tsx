@@ -17,7 +17,7 @@ export default function MyWorksPage() {
             <Card className="hover:shadow transition-shadow cursor-pointer">
               <div className="aspect-square bg-muted rounded-t-xl overflow-hidden relative">
                 {work.finalWorkUrl ? (
-                  <Image src={assetUrl(work.finalWorkUrl)} alt={work.title} fill sizes="25vw" className="object-cover" />
+                  <Image src={assetUrl(work.finalWorkUrl)} alt={work.title} fill sizes="25vw" className="object-cover img-bright" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">暂无图片</div>
                 )}

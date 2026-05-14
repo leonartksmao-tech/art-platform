@@ -123,7 +123,7 @@ export default function ProfilePage() {
               <Link key={work.id} href={`/gallery/${work.id}`}>
                 <div className="aspect-square bg-muted rounded-lg overflow-hidden relative">
                   {work.finalWorkUrl ? (
-                    <Image src={assetUrl(work.finalWorkUrl)} alt={work.title} fill sizes="25vw" className="object-cover" />
+                    <Image src={assetUrl(work.finalWorkUrl)} alt={work.title} fill sizes="25vw" className="object-cover img-bright" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">暂无图片</div>
                   )}

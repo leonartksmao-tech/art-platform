@@ -59,7 +59,7 @@ export default function HomePage() {
               >
                 <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
                   <div className="aspect-[3/4] relative bg-muted">
-                    <Image src={assetUrl((lesson as any).image)} alt={lesson.title} fill sizes="240px" className="object-cover" />
+                    <Image src={assetUrl((lesson as any).image)} alt={lesson.title} fill sizes="240px" className="object-cover img-bright" />
                   </div>
                   <div className="p-4">
                     <p className="font-bold text-base truncate">{lesson.title}</p>

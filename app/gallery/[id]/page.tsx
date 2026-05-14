@@ -49,7 +49,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ id:
                 alt={work.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 66vw"
-                className="object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
+                className="object-cover img-bright"
               />
             </div>
           )}
@@ -65,7 +65,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ id:
                       alt={`${work.title} ${i + 1}`}
                       fill
                       sizes="(max-width: 640px) 50vw, 33vw"
-                      className="object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
+                      className="object-cover img-bright"
                     />
                   </div>
                 ))}
@@ -96,7 +96,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ id:
                           alt={s.title}
                           fill
                           sizes="(max-width: 640px) 50vw, 33vw"
-                          className="object-cover filter saturate-[0.85] contrast-[1.05] brightness-[1.02]"
+                          className="object-cover img-bright"
                         />
                       </div>
                       <div className="p-3">
