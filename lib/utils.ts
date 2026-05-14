@@ -27,3 +27,31 @@ export function timeAgo(date: Date | string) {
   if (diffDay < 7) return `${diffDay} 天前`;
   return formatDate(date);
 }
+
+export function formatCount(n: number): string {
+  if (n >= 10000) return (n / 10000).toFixed(1).replace(".0", "") + "万";
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(".0", "") + "k";
+  return String(n);
+}
+
+export function formatDuration(minutes: number): string {
+  if (minutes < 60) return `${minutes}分钟`;
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return m > 0 ? `${h}小时${m}分钟` : `${h}小时`;
+}
+
+const WORKFLOW_ICONS: Record<string, string> = {
+  "sketch-refine": "✏️",
+  "color-compare": "🎨",
+  "spatial-factory": "🏗️",
+  "style-transfer": "🖼️",
+  "expression-solver": "💡",
+  "character-consistency": "🎭",
+  "tile-verify": "🔲",
+  "texture-reference": "🧵",
+};
+
+export function getLessonIcon(workflowType: string): string {
+  return WORKFLOW_ICONS[workflowType] ?? "🎯";
+}

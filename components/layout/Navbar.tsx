@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export function Navbar() {
   const [user, setUser] = useState<any>(null);
@@ -19,7 +21,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 nav-pro">
+    <nav className="sticky top-0 z-50 bg-[#1a1a2e] border-b border-white/10">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2.5 text-white">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-extrabold text-sm">猫</span>
@@ -28,29 +30,31 @@ export function Navbar() {
         </Link>
 
         <div className="flex items-center gap-1">
-          <Link href="/courses">
-            <span className="btn-pro btn-pro-ghost px-3 py-1.5 text-sm">课程</span>
-          </Link>
-          <Link href="/gallery">
-            <span className="btn-pro btn-pro-ghost px-3 py-1.5 text-sm">作品</span>
-          </Link>
-          <Link href="/create">
-            <span className="btn-pro btn-pro-ghost px-3 py-1.5 text-sm">AI 生图</span>
-          </Link>
+          <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
+            <Link href="/courses">课程</Link>
+          </Button>
+          <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
+            <Link href="/gallery">作品</Link>
+          </Button>
+          <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
+            <Link href="/create">AI 生图</Link>
+          </Button>
 
           {user ? (
-            <Link href="/profile">
-              <span className="btn-pro btn-pro-ghost px-3 py-1.5 text-sm">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/80 text-white text-xs font-bold mr-1.5">
-                  {user.email?.charAt(0).toUpperCase()}
-                </span>
+            <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
+              <Link href="/profile">
+                <Avatar className="h-5 w-5 mr-1.5 bg-primary/80">
+                  <AvatarFallback className="text-[10px] text-white">
+                    {user.email?.charAt(0).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
                 我的
-              </span>
-            </Link>
+              </Link>
+            </Button>
           ) : (
-            <Link href="/auth">
-              <span className="btn-pro btn-pro-primary px-4 py-1.5 text-sm ml-2">登录</span>
-            </Link>
+            <Button size="sm" className="ml-2" asChild>
+              <Link href="/auth">登录</Link>
+            </Button>
           )}
         </div>
       </div>
