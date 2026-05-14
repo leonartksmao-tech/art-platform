@@ -27,10 +27,10 @@ export default function CoursesPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#1a1a2e] via-[#2d2d4a] to-[#3d3d5c] text-white py-14 sm:py-20">
+      <section className="py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 text-center">
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">课程大厅</h1>
-          <p className="mt-3 text-white/60 text-lg">两大体系 21 节课，从基础能力到创造性思维</p>
+          <p className="mt-3 text-muted-foreground text-lg">两大体系 21 节课，从基础能力到创造性思维</p>
         </div>
       </section>
 

@@ -29,7 +29,7 @@ export function CourseCard({ course }: { course: Course }) {
 
   return (
     <Link href={`/courses/${course.id}`} className="group block">
-      <div className="rounded-xl border bg-card shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all overflow-hidden">
+      <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
         <div
           className={`h-40 bg-gradient-to-br ${config.gradient} flex items-center justify-center relative`}
         >

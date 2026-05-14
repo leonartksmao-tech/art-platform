@@ -28,30 +28,30 @@ export default function HomePage() {
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-[#1a1a2e] via-[#2d2d4a] to-[#3d3d5c] text-white py-16 sm:py-24">
+      <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <Badge className="bg-white/15 text-white/90 border-0 mb-5">
+          <Badge variant="secondary" className="mb-5">
             央美审美 × AI 工作流 × 创造力训练
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-foreground">
             让每个孩子成为
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
+            <span className="block text-primary">
               AI 时代的创作者
             </span>
           </h1>
-          <p className="mt-6 text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
             AI 可以模仿技术，但模仿不出孩子对世界的独特感知。
             21 节 AI 融合创作课，保护童真，放大想象。
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Button size="lg" asChild>
+            <Button size="lg" className="bg-primary hover:bg-[#d04a40]" asChild>
               <Link href="/courses">开始学习</Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 hover:text-white" asChild>
+            <Button variant="outline" size="lg" asChild>
               <Link href="/gallery">浏览作品</Link>
             </Button>
           </div>
-          <div className="mt-6 flex items-center gap-4 justify-center text-sm text-white/50">
+          <div className="mt-6 flex items-center gap-4 justify-center text-sm text-muted-foreground">
             <span>✓ 21 节精品课程</span>
             <span>✓ 5 级成长体系</span>
             <span>✓ 12 个成就徽章</span>
@@ -76,7 +76,7 @@ export default function HomePage() {
             { icon: "👨‍👩‍👧", title: "亲子共创时光", desc: "家长文字 + 孩子草图 + 老师导读 + AI 落地。创作成为高质量陪伴。" },
             { icon: "🃏", title: "21 卡牌 + 12 成就", desc: "拆解之力、导演之眼、色彩之心……完成即解锁，收集见证成长。" },
           ].map((item) => (
-            <div key={item.title} className="rounded-xl border bg-card p-6 text-center">
+            <div key={item.title} className="rounded-2xl bg-card shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-6 text-center">
               <p className="text-4xl mb-3">{item.icon}</p>
               <h3 className="font-bold text-lg mb-2">{item.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
@@ -117,9 +117,9 @@ export default function HomePage() {
       </Section>
 
       {/* CTA */}
-      <Section title="准备好开始了吗？" subtitle="加入猫猫老师的 AI 创作教室，让孩子的手、脑、心与 AI 一起工作。" variant="accent">
+      <Section title="准备好开始了吗？" subtitle="加入猫猫老师的 AI 创作教室，让孩子的手、脑、心与 AI 一起工作。" variant="muted">
         <div className="text-center">
-          <Button size="lg" variant="secondary" asChild>
+          <Button size="lg" className="bg-primary hover:bg-[#d04a40]" asChild>
             <Link href="/courses">免费开始学习</Link>
           </Button>
         </div>

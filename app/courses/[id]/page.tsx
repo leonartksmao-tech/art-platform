@@ -16,27 +16,22 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const course = FALLBACK_COURSES.find((c) => c.id === id);
   if (!course) notFound();
 
-  const gradient =
-    course.category === "CREATIVE"
-      ? "from-purple-500 to-indigo-600"
-      : "from-emerald-500 to-teal-600";
-
   return (
     <div>
-      <div className={`bg-gradient-to-br ${gradient} text-white py-14 sm:py-20`}>
+      <div className="bg-muted py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
-          <Badge className="bg-white/15 text-white/90 border-0 mb-4">
+          <Badge variant="secondary" className="mb-4">
             {course.category === "CREATIVE" ? "创作课" : "基础课"}
           </Badge>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2">{course.title}</h1>
-          <p className="mt-3 text-white/70 text-lg leading-relaxed max-w-2xl">{course.description}</p>
-          <div className="mt-4 flex items-center gap-3 text-sm text-white/60">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">{course.title}</h1>
+          <p className="mt-3 text-muted-foreground text-lg leading-relaxed max-w-2xl">{course.description}</p>
+          <div className="mt-4 flex items-center gap-3 text-sm text-muted-foreground">
             <span>{course.lessonCount} 节课</span>
             <span>·</span>
             <span>{course.category === "CREATIVE" ? "创造力训练" : "基础能力训练"}</span>
           </div>
           <div className="mt-6">
-            <Button variant="secondary" size="lg" asChild>
+            <Button size="lg" className="bg-primary hover:bg-[#d04a40]" asChild>
               <Link href={`/courses/${course.id}/learn?lesson=${course.lessons[0]?.id}`} className="gap-2">
                 <Play className="h-4 w-4" /> 从第一节开始学习
               </Link>

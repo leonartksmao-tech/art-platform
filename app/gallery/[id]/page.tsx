@@ -85,7 +85,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ id:
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {studentWorks.map((s) => (
                   <Link key={s.id} href={`/gallery/${s.id}`}>
-                    <div className="rounded-xl border bg-card shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all overflow-hidden cursor-pointer">
+                    <div className="rounded-2xl bg-card shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 transition-all overflow-hidden cursor-pointer">
                       <div className="aspect-[4/3] overflow-hidden">
                         <img
                           src={s.finalWorkUrl}

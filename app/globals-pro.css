@@ -31,22 +31,22 @@
 :root {
   --radius: 0.5rem;
   --background: #ffffff;
-  --foreground: #1a1a2e;
+  --foreground: #121212;
   --card: #ffffff;
-  --card-foreground: #1a1a2e;
-  --primary: #e05a3c;
+  --card-foreground: #121212;
+  --primary: #e85d4e;
   --primary-foreground: #ffffff;
   --secondary: #f5f5f7;
-  --secondary-foreground: #3d3d5c;
-  --muted: #f8f8fa;
-  --muted-foreground: #6b6b80;
-  --accent: #2d2d4a;
-  --accent-foreground: #ffffff;
-  --destructive: #dc2626;
+  --secondary-foreground: #121212;
+  --muted: #f5f5f7;
+  --muted-foreground: #5a5e69;
+  --accent: #f8f8fa;
+  --accent-foreground: #121212;
+  --destructive: #e2514a;
   --destructive-foreground: #ffffff;
-  --border: #e8e8ed;
-  --input: #e8e8ed;
-  --ring: #e05a3c;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #e85d4e;
 }
 
 body {
