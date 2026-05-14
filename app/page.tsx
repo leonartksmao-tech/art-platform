@@ -56,17 +56,17 @@ export default function HomePage() {
               <Link
                 key={lesson.id}
                 href={`/courses/${lesson.courseId}/learn?lesson=${lesson.id}`}
-                className="w-[170px] shrink-0 snap-start"
+                className="w-[140px] shrink-0 snap-start"
               >
                 <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
                   <div
-                    className={`h-24 flex items-center justify-center ${
+                    className={`aspect-[3/4] flex items-center justify-center ${
                       isCreative
                         ? "bg-gradient-to-br from-purple-500 to-indigo-600"
                         : "bg-gradient-to-br from-emerald-500 to-teal-600"
                     }`}
                   >
-                    <span className="text-3xl">{isCreative ? "🎨" : "📐"}</span>
+                    <span className="text-4xl">{isCreative ? "🎨" : "📐"}</span>
                   </div>
                   <div className="p-3">
                     <p className="font-semibold text-sm truncate">{lesson.title}</p>
