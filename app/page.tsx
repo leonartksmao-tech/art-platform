@@ -58,6 +58,42 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Lesson Quick Scroll */}
+      <Section title="探索课程" subtitle="21 节课，从图形概括到综合创作" viewAllHref="/courses">
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
+          {FALLBACK_COURSES.flatMap((c) =>
+            c.lessons.map((l) => ({ ...l, courseId: c.id, courseCategory: c.category, courseTitle: c.title }))
+          ).slice(0, 10).map((lesson) => {
+            const isCreative = lesson.courseCategory === "CREATIVE";
+            return (
+              <Link
+                key={lesson.id}
+                href={`/courses/${lesson.courseId}/learn?lesson=${lesson.id}`}
+                className="w-[170px] shrink-0 snap-start"
+              >
+                <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
+                  <div
+                    className={`h-24 flex items-center justify-center ${
+                      isCreative
+                        ? "bg-gradient-to-br from-purple-500 to-indigo-600"
+                        : "bg-gradient-to-br from-emerald-500 to-teal-600"
+                    }`}
+                  >
+                    <span className="text-3xl">{isCreative ? "🎨" : "📐"}</span>
+                  </div>
+                  <div className="p-3">
+                    <p className="font-semibold text-sm truncate">{lesson.title}</p>
+                    <p className="text-[11px] text-muted-foreground mt-0.5 line-clamp-2 leading-snug">
+                      {lesson.coreThinking}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </Section>
+
       {/* Value Props */}
       <Section title="为什么选择 AI 创作课" subtitle="不只是学画画，更是培养 AI 时代的核心创造力" variant="muted">
         <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
