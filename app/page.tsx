@@ -103,11 +103,11 @@ export default function HomePage() {
       <Section title="为什么选择 AI 创作课" subtitle="不只是学画画，更是培养 AI 时代的核心创造力" variant="muted">
         <div className="flex lg:grid lg:grid-cols-3 gap-3 lg:gap-6 overflow-x-auto lg:overflow-visible pb-2 snap-x lg:snap-none snap-mandatory no-scrollbar">
           {[
-            { icon: "🎬", title: "AI 是画笔，孩子是导演", desc: "孩子画草图定故事方向，AI 辅助润色。AI 不会讲故事，孩子会。" },
-            { icon: "👨‍👩‍👧", title: "亲子共创时光", desc: "家长文字 + 孩子草图 + 老师导读 + AI 落地。创作成为高质量陪伴。" },
-            { icon: "🃏", title: "21 卡牌 + 12 成就", desc: "拆解之力、导演之眼、色彩之心……完成即解锁，收集见证成长。" },
+            { icon: "🎬", title: "AI 是画笔，孩子是导演", desc: "孩子画草图定故事方向，AI 辅助润色。AI 不会讲故事，孩子会。", tilt: "tilt-1" },
+            { icon: "👨‍👩‍👧", title: "亲子共创时光", desc: "家长文字 + 孩子草图 + 老师导读 + AI 落地。创作成为高质量陪伴。", tilt: "tilt-3" },
+            { icon: "🃏", title: "21 卡牌 + 12 成就", desc: "拆解之力、导演之眼、色彩之心……完成即解锁，收集见证成长。", tilt: "tilt-5" },
           ].map((item) => (
-            <div key={item.title} className="w-[240px] lg:w-auto shrink-0 snap-start rounded-2xl bg-card shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-6 text-center">
+            <div key={item.title} className={`w-[240px] lg:w-auto shrink-0 snap-start card-sketch bg-card p-6 text-center ${item.tilt}`}>
               <p className="text-5xl mb-4">{item.icon}</p>
               <h3 className="font-bold text-base mb-2">{item.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>

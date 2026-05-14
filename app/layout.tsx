@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, ZCOOL_KuaiLe } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "./globals-pro.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const zcoolKuaiLe = ZCOOL_KuaiLe({ variable: "--font-sketch", weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "猫猫老师 AI 创作教室",
@@ -29,7 +30,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} ${zcoolKuaiLe.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <svg width="0" height="0" style={{ position: "absolute" }}>
           <defs>

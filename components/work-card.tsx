@@ -16,7 +16,7 @@ interface Work {
 export function WorkCard({ work }: { work: Work }) {
   return (
     <Link href={`/gallery/${work.id}`} className="group block">
-      <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
+      <div className="card-sketch bg-card hover:-translate-y-0.5 transition-all overflow-hidden">
         <div className="aspect-[4/3] overflow-hidden bg-muted relative">
           <Image
             src={assetUrl(work.finalWorkUrl)}

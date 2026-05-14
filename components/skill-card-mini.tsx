@@ -40,7 +40,7 @@ const rarityBorder: Record<string, string> = {
 export function SkillCardMini({ name, rarity, description, unlocked = true, image }: SkillCardMiniProps) {
   if (image) {
     return (
-      <div className={`rounded-xl overflow-hidden border-2 transition-all hover:-translate-y-0.5 hover:shadow-lg ${
+      <div className={`card-sketch overflow-hidden border-2 transition-all hover:-translate-y-0.5 ${
         unlocked ? rarityBorder[rarity] ?? rarityBorder.COMMON : "border-border opacity-50 grayscale"
       }`}>
         <div className="aspect-[3/4] relative bg-muted">
