@@ -54,15 +54,15 @@ export default function HomePage() {
               <Link
                 key={lesson.id}
                 href={`/courses/${lesson.courseId}/learn?lesson=${lesson.id}`}
-                className="w-[140px] shrink-0 snap-start"
+                className="w-[240px] shrink-0 snap-start"
               >
                 <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
                   <div className="aspect-[3/4] flex items-center justify-center bg-gradient-to-br from-amber-400 to-rose-500">
-                    <span className="text-4xl">📚</span>
+                    <span className="text-6xl">📚</span>
                   </div>
-                  <div className="p-3">
-                    <p className="font-semibold text-sm truncate">{lesson.title}</p>
-                    <p className="text-[11px] text-muted-foreground mt-0.5 line-clamp-2 leading-snug">
+                  <div className="p-4">
+                    <p className="font-bold text-base truncate">{lesson.title}</p>
+                    <p className="text-sm text-muted-foreground mt-1 line-clamp-2 leading-snug">
                       {lesson.coreThinking}
                     </p>
                   </div>
@@ -77,7 +77,7 @@ export default function HomePage() {
       <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，21 张卡牌见证成长" viewAllHref="/profile/skills">
         <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
           {displaySkills.map((skill) => (
-            <div key={skill.name} className="w-[140px] shrink-0 snap-start">
+            <div key={skill.name} className="w-[240px] shrink-0 snap-start">
               <SkillCardMini
                 name={skill.name}
                 rarity={skill.rarity}
@@ -100,16 +100,16 @@ export default function HomePage() {
 
       {/* Value Props */}
       <Section title="为什么选择 AI 创作课" subtitle="不只是学画画，更是培养 AI 时代的核心创造力" variant="muted">
-        <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory no-scrollbar">
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 snap-x snap-mandatory no-scrollbar">
           {[
             { icon: "🎬", title: "AI 是画笔，孩子是导演", desc: "孩子画草图定故事方向，AI 辅助润色。AI 不会讲故事，孩子会。" },
             { icon: "👨‍👩‍👧", title: "亲子共创时光", desc: "家长文字 + 孩子草图 + 老师导读 + AI 落地。创作成为高质量陪伴。" },
             { icon: "🃏", title: "21 卡牌 + 12 成就", desc: "拆解之力、导演之眼、色彩之心……完成即解锁，收集见证成长。" },
           ].map((item) => (
-            <div key={item.title} className="w-[220px] shrink-0 snap-start rounded-2xl bg-card shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-5 text-center">
-              <p className="text-4xl mb-3">{item.icon}</p>
-              <h3 className="font-bold text-sm mb-1.5">{item.title}</h3>
-              <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+            <div key={item.title} className="w-[240px] shrink-0 snap-start rounded-2xl bg-card shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-6 text-center">
+              <p className="text-5xl mb-4">{item.icon}</p>
+              <h3 className="font-bold text-base mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
