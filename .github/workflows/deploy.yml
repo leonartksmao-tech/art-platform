@@ -33,8 +33,8 @@ jobs:
           SIGN_SECRET: ${{ secrets.VIDEO_SIGN_SECRET }}
       - run: npm run build
         env:
-          NEXT_PUBLIC_SUPABASE_URL: https://dummy.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: dummy-key
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_VIDEO_BASE_URL: https://video-proxy.leonartksmao.workers.dev
           NEXT_PUBLIC_VIDEO_TOKEN: ${{ steps.token.outputs.value }}
           DATABASE_URL: postgresql://dummy:dummy@localhost:5432/dummy
