@@ -148,7 +148,7 @@ export default function HomePage() {
             <span>🤖 AI 创作经验</span>
             <span>👨‍👩‍👧 连接学员家长</span>
           </div>
-          <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-[#1a1a1a]" asChild>
+          <Button size="lg" className="bg-white text-[#1a1a1a] hover:bg-white/90 font-semibold" asChild>
             <Link href="/teach">了解详情 →</Link>
           </Button>
         </div>
