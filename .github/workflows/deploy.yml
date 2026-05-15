@@ -30,7 +30,7 @@ jobs:
         id: token
         run: echo "value=$(node scripts/generate-token.js)" >> "$GITHUB_OUTPUT"
         env:
-          SIGN_SECRET: ${{ secrets.SIGN_SECRET }}
+          SIGN_SECRET: ${{ secrets.VIDEO_SIGN_SECRET }}
       - run: npm run build
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
