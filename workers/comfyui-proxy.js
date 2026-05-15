@@ -65,13 +65,23 @@ export default {
     // POST /generate — 一站式生图
     if (url.pathname === "/generate" && request.method === "POST") {
       try {
-        return await handleGenerate(request, env);
+        return await handleGenerate(request, env, url);
       } catch (e) {
         return new Response(JSON.stringify({ error: e.message }), {
           status: 500,
           headers: { "Content-Type": "application/json", ...corsHeaders() },
         });
       }
+    }
+
+    // GET /generated/* — 从 R2 读取生成图片
+    if (url.pathname.startsWith("/generated/") && request.method === "GET") {
+      const obj = await env.IMAGES.get(url.pathname.slice(1));
+      if (!obj) return new Response("Not Found", { status: 404, headers: corsHeaders() });
+      const headers = new Headers(corsHeaders());
+      obj.writeHttpMetadata(headers);
+      headers.set("Cache-Control", "public, max-age=86400");
+      return new Response(obj.body, { headers });
     }
 
     // 透传其他请求到 ComfyUI
@@ -121,7 +131,7 @@ async function uploadToComfyUI(comfyuiUrl, dataUrl, filename) {
   return await res.json(); // { name, subfolder, type }
 }
 
-// 电商换装工作流 JSON（从 ComfyUI Export API 导出）
+// 电商换装工作流（API 格式）
 const HUANZHUANG_WORKFLOW = {
   "69": { "class_type": "ReferenceLatent", "inputs": { "conditioning": ["86", 0], "latent": ["87", 0] } },
   "70": { "class_type": "ReferenceLatent", "inputs": { "conditioning": ["116", 0], "latent": ["87", 0] } },
@@ -129,61 +139,56 @@ const HUANZHUANG_WORKFLOW = {
   "72": { "class_type": "VAEEncode", "inputs": { "pixels": ["83", 0], "vae": ["102", 0] } },
   "73": { "class_type": "EmptyFlux2LatentImage", "inputs": { "width": ["82", 0], "height": ["82", 1], "batch_size": ["82", 2] } },
   "74": { "class_type": "KSamplerSelect", "inputs": { "sampler_name": "euler" } },
-  "75": { "class_type": "RandomNoise", "inputs": { "noise_seed": ["143", 0] } },
+  "75": { "class_type": "RandomNoise", "inputs": { "noise_seed": 854239813634553 } },
   "76": { "class_type": "CFGGuider", "inputs": { "model": ["110", 0], "positive": ["101", 0], "negative": ["71", 0], "cfg": 1 } },
-  "77": { "class_type": "SetNode", "inputs": { "IMAGE": ["140", 0] }, "_meta": { "title": "Set_图一" } },
+  "77": { "class_type": "SetNode", "inputs": { "IMAGE": ["115", 0] } },
   "78": { "class_type": "Flux2Scheduler", "inputs": { "steps": 8, "width": ["82", 0], "height": ["82", 1] } },
-  "79": { "class_type": "SetNode", "inputs": { "IMAGE": ["148", 0] }, "_meta": { "title": "Set_图二" } },
-  "80": { "class_type": "GetNode", "inputs": {}, "_meta": { "title": "Get_图一" } },
+  "79": { "class_type": "SetNode", "inputs": { "IMAGE": ["114", 0] } },
+  "80": { "class_type": "GetNode", "inputs": {} },
   "81": { "class_type": "Reroute", "inputs": { "": ["85", 0] } },
   "82": { "class_type": "GetImageSize", "inputs": { "image": ["100", 0] } },
-  "83": { "class_type": "GetNode", "inputs": {}, "_meta": { "title": "Get_图二" } },
-  "84": { "class_type": "SetNode", "inputs": { "IMAGE": ["85", 0] }, "_meta": { "title": "Set_图三" } },
+  "83": { "class_type": "GetNode", "inputs": {} },
+  "84": { "class_type": "SetNode", "inputs": { "IMAGE": ["85", 0] } },
   "85": { "class_type": "VAEDecode", "inputs": { "samples": ["111", 0], "vae": ["102", 0] } },
   "86": { "class_type": "CLIPTextEncode", "inputs": { "clip": ["108", 0], "text": "" } },
   "87": { "class_type": "VAEEncode", "inputs": { "pixels": ["100", 0], "vae": ["102", 0] } },
   "91": { "class_type": "CFGGuider", "inputs": { "model": ["110", 0], "positive": ["125", 0], "negative": ["125", 1], "cfg": 1 } },
-  "92": { "class_type": "RandomNoise", "inputs": { "noise_seed": 610792111831295 } },
-  "93": { "class_type": "Flux2Scheduler", "inputs": { "steps": 8, "width": 1024, "height": 1024 } },
+  "92": { "class_type": "RandomNoise", "inputs": { "noise_seed": 610792111831294 } },
+  "93": { "class_type": "Flux2Scheduler", "inputs": { "steps": 12, "width": ["97", 3], "height": ["97", 4] } },
   "94": { "class_type": "KSamplerSelect", "inputs": { "sampler_name": "euler" } },
   "95": { "class_type": "VAEDecode", "inputs": { "samples": ["113", 0], "vae": ["102", 0] } },
-  "96": { "class_type": "GetNode", "inputs": {}, "_meta": { "title": "Get_图三" } },
+  "96": { "class_type": "GetNode", "inputs": {} },
   "97": { "class_type": "LayerUtility: ImageScaleByAspectRatio V2", "inputs": { "image": ["96", 0], "aspect_ratio": "original", "proportional_width": 1, "proportional_height": 1, "fit": "fill", "method": "lanczos", "round_to_multiple": "16", "scale_to_side": "longest", "scale_to_length": 2048, "background_color": "#000000" } },
   "98": { "class_type": "ImageScaleToTotalPixels", "inputs": { "image": ["99", 0], "upscale_method": "bicubic", "megapixels": 1.5, "resolution_steps": 1 } },
-  "99": { "class_type": "GetNode", "inputs": {}, "_meta": { "title": "Get_图一" } },
+  "99": { "class_type": "GetNode", "inputs": {} },
   "100": { "class_type": "LayerUtility: ImageScaleByAspectRatio V2", "inputs": { "image": ["98", 0], "aspect_ratio": "original", "proportional_width": 1, "proportional_height": 1, "fit": "fill", "method": "lanczos", "round_to_multiple": "16", "scale_to_side": "None", "scale_to_length": 1024, "background_color": "#000000" } },
   "101": { "class_type": "ReferenceLatent", "inputs": { "conditioning": ["70", 0], "latent": ["72", 0] } },
-  "102": { "class_type": "VAELoader", "inputs": { "vae_name": "Flux2\\flux2-vae.safetensors" } },
-  "103": { "class_type": "GetNode", "inputs": {}, "_meta": { "title": "Get_图三" } },
+  "102": { "class_type": "VAELoader", "inputs": { "vae_name": "flux2-vae.safetensors" } },
+  "103": { "class_type": "GetNode", "inputs": {} },
   "104": { "class_type": "SaveImage", "inputs": { "images": ["85", 0], "filename_prefix": "Flux2-Klein-4b-base" } },
   "105": { "class_type": "Image Comparer (rgthree)", "inputs": { "image_a": ["80", 0], "image_b": ["81", 0] } },
   "107": { "class_type": "SaveImage", "inputs": { "images": ["120", 0], "filename_prefix": "Flux2-Klein-4b-base" } },
-  "108": { "class_type": "CLIPLoader", "inputs": { "clip_name": "Flux2\\9b\\qwen_3_8b.safetensors", "type": "flux2", "device": "default" } },
-  "110": { "class_type": "UNETLoader", "inputs": { "unet_name": "Flux2\\flux-2-klein-9b.safetensors", "weight_dtype": "default" } },
+  "108": { "class_type": "CLIPLoader", "inputs": { "clip_name": "qwen_3_8b_fp8mixed.safetensors", "type": "flux2", "device": "default" } },
+  "110": { "class_type": "UNETLoader", "inputs": { "unet_name": "flux-2-klein-9b.safetensors", "weight_dtype": "default" } },
   "111": { "class_type": "SamplerCustomAdvanced", "inputs": { "noise": ["75", 0], "guider": ["76", 0], "sampler": ["74", 0], "sigmas": ["78", 0], "latent_image": ["73", 0] } },
-  "112": { "class_type": "Image Blending Mode", "inputs": { "image_a": ["95", 0], "image_b": ["97", 0], "mode": "color", "blend_percentage": 0.7 } },
   "113": { "class_type": "SamplerCustomAdvanced", "inputs": { "noise": ["92", 0], "guider": ["91", 0], "sampler": ["94", 0], "sigmas": ["93", 0], "latent_image": ["125", 2] } },
-  "114": { "class_type": "LoadImage", "inputs": { "image": "__CLOTHING__", "upload": "image" }, "_meta": { "title": "服装" } },
-  "115": { "class_type": "LoadImage", "inputs": { "image": "__MODEL__", "upload": "image" }, "_meta": { "title": "模特" } },
-  "116": { "class_type": "CLIPTextEncode", "inputs": { "clip": ["108", 0], "text": "把图二的图案放到图一的红框中，并且修掉红框，其他保持不变" } },
+  "114": { "class_type": "LoadImage", "inputs": { "image": "__CLOTHING__", "upload": "image" } },
+  "115": { "class_type": "LoadImage", "inputs": { "image": "__MODEL__", "upload": "image" } },
+  "116": { "class_type": "CLIPTextEncode", "inputs": { "clip": ["108", 0], "text": "__PROMPT__" } },
   "117": { "class_type": "Image Comparer (rgthree)", "inputs": { "image_a": ["103", 0], "image_b": ["120", 0] } },
   "119": { "class_type": "easy positive", "inputs": { "positive": "4K，修复画质，去除杂色和杂点" } },
-  "120": { "class_type": "LayerColor: ColorAdapter", "inputs": { "image": ["112", 0], "color_ref_image": ["97", 0], "opacity": 75 } },
+  "120": { "class_type": "LayerColor: ColorAdapter", "inputs": { "image": ["128", 0], "color_ref_image": ["97", 0], "opacity": 75 } },
   "121": { "class_type": "SaveImage", "inputs": { "images": ["122", 0], "filename_prefix": "Flux2-Klein-4b-base" } },
   "122": { "class_type": "easy imageConcat", "inputs": { "image1": ["123", 0], "image2": ["120", 0], "direction": "right", "match_image_size": true } },
   "123": { "class_type": "easy imageConcat", "inputs": { "image1": ["115", 0], "image2": ["114", 0], "direction": "up", "match_image_size": true } },
-  "125": { "class_type": "PainterFluxImageEdit", "inputs": { "clip": ["108", 0], "vae": ["102", 0], "image1": ["97", 0], "prompt": "__PROMPT__", "mode": "1_image", "batch_size": 1, "width": 1024, "height": 1024 } },
-  "137": { "class_type": "LayerUtility: ColorImage V2", "inputs": { "custom_width": "custom", "custom_height": 512 } },
-  "138": { "class_type": "GetImageSize+", "inputs": { "image": ["115", 0] } },
-  "139": { "class_type": "PreviewImage", "inputs": { "images": ["140", 0] } },
-  "140": { "class_type": "LayerUtility: ImageBlendAdvance", "inputs": { "background_image": ["115", 0], "layer_image": ["137", 0], "layer_mask": ["115", 1] } },
-  "143": { "class_type": "Seed (rgthree)", "inputs": {} },
-  "148": { "class_type": "easy imageScaleDownBy", "inputs": { "images": ["114", 0] } },
+  "125": { "class_type": "PainterFluxImageEdit", "inputs": { "clip": ["108", 0], "vae": ["102", 0], "image1": ["97", 0], "prompt": ["119", 0], "mode": "1_image", "batch_size": 1, "width": ["97", 3], "height": ["97", 4] } },
+  "128": { "class_type": "Image Blending Mode", "inputs": { "image_a": ["95", 0], "image_b": ["97", 0], "mode": "color", "blend_percentage": 0.7 } },
 };
 
-async function handleGenerate(request, env) {
+async function handleGenerate(request, env, reqUrl) {
   const body = await request.json();
   const { prompt, modelImage, clothingImage } = body;
+  const workerBase = `${reqUrl.protocol}//${reqUrl.host}`;
 
   if (!prompt) {
     return new Response(JSON.stringify({ error: "Missing prompt" }), {
@@ -213,17 +218,44 @@ async function handleGenerate(request, env) {
   }
   const results = await Promise.all(uploads);
 
-  // 2. 深拷贝工作流并注入参数
+  // 2. 深拷贝工作流
   const wf = JSON.parse(JSON.stringify(HUANZHUANG_WORKFLOW));
 
+  // 2a. 绕过 SetNode/GetNode/Reroute（这些节点在 API 端不存在）
+  // 图一=模特(115), 图二=服装(114), 图三=VAEDecode输出(85)
+  const REWRITE = {
+    "80": "115",  // GetNode 图一 → 模特
+    "83": "114",  // GetNode 图二 → 服装
+    "96": "85",   // GetNode 图三 → VAEDecode
+    "99": "115",  // GetNode 图一 → 模特
+    "103": "85",  // GetNode 图三 → VAEDecode
+    "81": "85",   // Reroute → VAEDecode
+  };
+  const REMOVE = new Set(["77", "79", "84", "80", "81", "83", "96", "99", "103"]);
+
+  // 重写所有节点输入中的引用
+  for (const [nodeId, node] of Object.entries(wf)) {
+    if (REMOVE.has(nodeId)) continue;
+    for (const [key, val] of Object.entries(node.inputs)) {
+      if (Array.isArray(val) && val.length >= 1 && REWRITE[val[0]]) {
+        node.inputs[key] = [REWRITE[val[0]], val[1] ?? 0];
+      }
+    }
+  }
+  // 删除 SetNode/GetNode/Reroute
+  for (const id of REMOVE) delete wf[id];
+
+  // 2b. 注入用户上传的图片和提示词
   let modelIdx = 0;
   if (modelImage) {
     wf["115"].inputs.image = results[modelIdx++].name;
+    delete wf["115"].inputs.upload;
   }
   if (clothingImage) {
     wf["114"].inputs.image = results[modelIdx].name;
+    delete wf["114"].inputs.upload;
   }
-  wf["125"].inputs.prompt = prompt;
+  wf["116"].inputs.text = prompt;
 
   // 3. 提交到 ComfyUI
   const queueRes = await fetch(`${comfyuiUrl}/prompt`, {
@@ -232,14 +264,15 @@ async function handleGenerate(request, env) {
     body: JSON.stringify({ prompt: wf }),
   });
   if (!queueRes.ok) {
-    throw new Error(`ComfyUI queue failed: ${queueRes.status}`);
+    const errText = await queueRes.text();
+    throw new Error(`ComfyUI queue failed: ${queueRes.status} — ${errText}`);
   }
   const { prompt_id } = await queueRes.json();
 
-  // 4. 轮询等待完成（最长 180 秒）
-  const maxRetries = 60;
+  // 4. 轮询等待完成（最长 280 秒，每次 8 秒，共 35 次）
+  const maxRetries = 35;
   for (let i = 0; i < maxRetries; i++) {
-    await new Promise((r) => setTimeout(r, 3000));
+    await new Promise((r) => setTimeout(r, 8000));
     const histRes = await fetch(`${comfyuiUrl}/history/${prompt_id}`);
     if (!histRes.ok) continue;
     const hist = await histRes.json();
@@ -262,7 +295,7 @@ async function handleGenerate(request, env) {
           }
           images.push({
             filename: output.filename,
-            url: env.IMAGES ? `${env.R2_PUBLIC_URL || ""}/${key}` : `${comfyuiUrl}/view?filename=${output.filename}`,
+            url: env.IMAGES ? `${workerBase}/${key}` : `${comfyuiUrl}/view?filename=${output.filename}`,
           });
         }
       }
