@@ -26,17 +26,19 @@ jobs:
       - run: npx prisma generate
         env:
           DATABASE_URL: postgresql://dummy:dummy@localhost:5432/dummy
-      - name: Generate video token
+      - name: Generate token
         id: token
         run: echo "value=$(node scripts/generate-token.js)" >> "$GITHUB_OUTPUT"
         env:
-          SIGN_SECRET: ${{ secrets.VIDEO_SIGN_SECRET }}
+          SIGN_SECRET: ${{ secrets.SIGN_SECRET }}
       - run: npm run build
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_VIDEO_BASE_URL: https://video-proxy.leonartksmao.workers.dev
           NEXT_PUBLIC_VIDEO_TOKEN: ${{ steps.token.outputs.value }}
+          NEXT_PUBLIC_COMFYUI_PROXY_URL: https://comfyui-proxy.leonartksmao.workers.dev
+          NEXT_PUBLIC_COMFYUI_TOKEN: ${{ steps.token.outputs.value }}
           DATABASE_URL: postgresql://dummy:dummy@localhost:5432/dummy
       - uses: actions/upload-pages-artifact@v3
         with:
