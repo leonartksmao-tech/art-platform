@@ -163,8 +163,8 @@ export default function HomePage() {
             微信扫码加入「央美猫猫老师绘本 AI 创作营」，和更多创作者一起交流 AI 美育。
           </p>
           <div className="flex justify-center mb-6">
-            <div className="card-sketch bg-card p-3 w-48 h-48 flex items-center justify-center">
-              <img src="/qrcode.jpg" alt="微信群二维码" className="w-full h-full object-contain" />
+            <div className="card-sketch bg-card p-4 w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center">
+              <img src="/qrcode-cropped.jpg" alt="微信群二维码" className="w-full h-full object-contain" />
             </div>
           </div>
           <p className="text-xs text-muted-foreground">
