@@ -40,19 +40,20 @@ const rarityBorder: Record<string, string> = {
 export function SkillCardMini({ name, rarity, description, unlocked = true, image }: SkillCardMiniProps) {
   if (image) {
     return (
-      <div className={`card-academy overflow-hidden transition-all ${
-        unlocked ? "" : "opacity-50 grayscale"
+      <div className={`card-sketch overflow-hidden border-2 transition-all hover:-translate-y-0.5 ${
+        unlocked ? rarityBorder[rarity] ?? rarityBorder.COMMON : "border-border opacity-50 grayscale"
       }`}>
-        <div className="aspect-[3/4] relative bg-muted card-gradient-mask">
+        <div className="aspect-[3/4] relative bg-muted">
           <Image src={assetUrl(image)} alt={name} fill sizes="25vw" className="object-cover img-bright" />
-          <span className="absolute top-2 right-2 flex h-6 w-6 items-center justify-center rounded bg-white/90 text-[10px] z-10">
+          {/* 稀有度图标 */}
+          <span className="absolute top-2 right-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-sm shadow-sm">
             {rarityEmoji[rarity]}
           </span>
         </div>
-        <div className="p-2.5 bg-card space-y-1">
-          <p className="font-bold text-xs uppercase tracking-tight truncate">{name}</p>
-          <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-semibold ${rarityBadgeColor[rarity]}`}>
-            {rarityBadge[rarity]}
+        <div className="p-2.5 text-center bg-card space-y-1">
+          <p className="font-bold text-xs truncate">{name}</p>
+          <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold ${rarityBadgeColor[rarity]}`}>
+            {rarityEmoji[rarity]} {rarityBadge[rarity]}
           </span>
         </div>
       </div>

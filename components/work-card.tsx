@@ -16,8 +16,8 @@ interface Work {
 export function WorkCard({ work }: { work: Work }) {
   return (
     <Link href={`/gallery/${work.id}`} className="group block">
-      <div className="card-academy overflow-hidden">
-        <div className="aspect-[4/3] overflow-hidden bg-muted relative card-gradient-mask">
+      <div className="card-sketch bg-card hover:-translate-y-0.5 transition-all overflow-hidden">
+        <div className="aspect-[4/3] overflow-hidden bg-muted relative">
           <Image
             src={assetUrl(work.finalWorkUrl)}
             alt={work.title}
@@ -26,8 +26,8 @@ export function WorkCard({ work }: { work: Work }) {
             className="object-cover img-bright group-hover:scale-105 transition-transform duration-300"
           />
           {work.isFeatured && (
-            <Badge className="absolute top-3 left-3 bg-primary text-white border-0 text-[10px] z-10">
-              FEATURED
+            <Badge className="absolute top-3 left-3 bg-amber-500 text-white border-0 text-[10px]">
+              ★ 精选
             </Badge>
           )}
         </div>
@@ -38,9 +38,9 @@ export function WorkCard({ work }: { work: Work }) {
             </Avatar>
             <span className="text-xs font-medium text-muted-foreground">{work.profile.nickname}</span>
           </div>
-          <h3 className="font-bold text-xs uppercase tracking-tight line-clamp-1">{work.title}</h3>
-          <div className="micro-data mt-1.5">
-            <span>{formatCount(work.likesCount)} 赞</span>
+          <h3 className="font-semibold text-sm line-clamp-1">{work.title}</h3>
+          <div className="flex items-center gap-3 mt-1.5 text-xs text-muted-foreground">
+            <span>❤️ {formatCount(work.likesCount)}</span>
           </div>
         </div>
       </div>

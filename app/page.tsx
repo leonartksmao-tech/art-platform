@@ -15,31 +15,33 @@ export default function HomePage() {
   return (
     <div>
       {/* Header */}
-      <section className="py-20 sm:py-28">
+      <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <p className="section-tag mb-5">ACADEMY · AI · CREATIVITY</p>
-          <h1 className="title-academy text-4xl sm:text-5xl lg:text-6xl leading-tight text-foreground">
+          <Badge variant="secondary" className="mb-5">
+            央美审美 × AI 工作流 × 创造力训练
+          </Badge>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-foreground">
             让每个孩子成为
             <span className="block text-primary">
               AI 时代的创作者
             </span>
           </h1>
-          <p className="mt-6 text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
             AI 可以模仿技术，但模仿不出孩子对世界的独特感知。
             21 节 AI 融合创作课，保护童真，放大想象。
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-[#d04a40] text-white font-semibold px-8" asChild>
+            <Button size="lg" className="bg-primary hover:bg-[#d04a40]" asChild>
               <Link href="/courses">开始学习</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-foreground/15 text-foreground hover:bg-foreground hover:text-background font-semibold px-8" asChild>
+            <Button variant="outline" size="lg" asChild>
               <Link href="/gallery">浏览作品</Link>
             </Button>
           </div>
-          <div className="mt-8 micro-data justify-center">
-            <span>21 节精品课程</span>
-            <span>5 级成长体系</span>
-            <span>12 个成就徽章</span>
+          <div className="mt-6 flex items-center gap-4 justify-center text-sm text-muted-foreground">
+            <span>✓ 21 节精品课程</span>
+            <span>✓ 5 级成长体系</span>
+            <span>✓ 12 个成就徽章</span>
           </div>
         </div>
       </section>
@@ -55,13 +57,13 @@ export default function HomePage() {
                 href={`/courses/${lesson.courseId}/learn?lesson=${lesson.id}`}
                 className="w-[240px] lg:w-auto shrink-0 snap-start"
               >
-                <div className="card-academy overflow-hidden">
-                  <div className="aspect-[3/4] relative bg-muted card-gradient-mask">
+                <div className="rounded-2xl bg-card shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.14)] hover:-translate-y-0.5 transition-all overflow-hidden">
+                  <div className="aspect-[3/4] relative bg-muted">
                     <Image src={assetUrl((lesson as any).image)} alt={lesson.title} fill sizes="240px" className="object-cover img-bright" />
                   </div>
                   <div className="p-4">
-                    <p className="font-bold text-sm truncate">{lesson.title}</p>
-                    <p className="text-xs text-muted-foreground mt-1 line-clamp-2 leading-snug">
+                    <p className="font-bold text-base truncate">{lesson.title}</p>
+                    <p className="text-sm text-muted-foreground mt-1 line-clamp-2 leading-snug">
                       {lesson.coreThinking}
                     </p>
                   </div>
@@ -105,10 +107,10 @@ export default function HomePage() {
             { icon: "👨‍👩‍👧", title: "亲子共创时光", desc: "家长文字 + 孩子草图 + 老师导读 + AI 落地。创作成为高质量陪伴。", tilt: "tilt-3" },
             { icon: "🃏", title: "21 卡牌 + 12 成就", desc: "拆解之力、导演之眼、色彩之心……完成即解锁，收集见证成长。", tilt: "tilt-5" },
           ].map((item) => (
-            <div key={item.title} className={`w-[240px] lg:w-auto shrink-0 snap-start card-academy bg-card p-6 text-center`}>
-              <p className="text-4xl mb-4">{item.icon}</p>
-              <h3 className="font-bold text-sm mb-2">{item.title}</h3>
-              <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+            <div key={item.title} className={`w-[240px] lg:w-auto shrink-0 snap-start card-sketch bg-card p-6 text-center ${item.tilt}`}>
+              <p className="text-5xl mb-4">{item.icon}</p>
+              <h3 className="font-bold text-base mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

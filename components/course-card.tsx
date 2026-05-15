@@ -24,26 +24,24 @@ export function CourseCard({ course }: { course: Course }) {
 
   return (
     <Link href={`/courses/${course.id}`} className="group block">
-      <div className="card-academy overflow-hidden">
+      <div className="card-sketch bg-card hover:-translate-y-0.5 transition-all overflow-hidden">
         <div
-          className={`h-40 bg-gradient-to-br ${config.gradient} flex items-center justify-center relative card-gradient-mask`}
+          className={`h-40 bg-gradient-to-br ${config.gradient} flex items-center justify-center relative`}
         >
-          <span className="text-5xl relative z-10">{config.emoji}</span>
-          <Badge className="absolute top-3 left-3 bg-white/15 text-white border-0 text-[10px] relative z-10">
+          <span className="text-5xl">{config.emoji}</span>
+          <Badge className="absolute top-3 left-3 bg-white/15 text-white border-0">
             {config.label}
           </Badge>
         </div>
         <div className="p-5 space-y-2">
-          <h3 className="text-sm font-bold uppercase tracking-tight group-hover:text-primary transition-colors">
+          <h3 className="text-lg font-bold group-hover:text-primary transition-colors">
             {course.title}
           </h3>
-          <p className="text-xs text-muted-foreground line-clamp-2">{course.description}</p>
+          <p className="text-sm text-muted-foreground line-clamp-2">{course.description}</p>
           <div className="flex items-center justify-between pt-2">
-            <div className="micro-data">
-              <span>{course.lessonCount} 课时</span>
-            </div>
-            <span className="text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-              查看课程 <ArrowRight className="h-3 w-3" />
+            <span className="text-xs text-muted-foreground">{course.lessonCount} 节课</span>
+            <span className="text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+              查看课程 <ArrowRight className="h-3.5 w-3.5" />
             </span>
           </div>
         </div>
