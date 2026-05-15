@@ -10,7 +10,7 @@ import { FALLBACK_COURSES, FALLBACK_TEACHER_WORKS, FALLBACK_SKILL_CARDS } from "
 import { assetUrl } from "@/lib/utils";
 
 export default function HomePage() {
-  const displaySkills = FALLBACK_SKILL_CARDS.slice(0, 8);
+  const displaySkills = FALLBACK_SKILL_CARDS;
 
   return (
     <div>
