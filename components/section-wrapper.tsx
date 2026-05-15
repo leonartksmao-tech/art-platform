@@ -39,7 +39,7 @@ export function Section({
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-end justify-between mb-8">
           <div>
-            <h2 className="sketch-title-underline font-sketch text-2xl sm:text-3xl font-extrabold tracking-tight">{title}</h2>
+            <h2 className="title-academy text-xl sm:text-2xl">{title}</h2>
             {subtitle && <p className={subtitleStyles[variant] + " mt-1"}>{subtitle}</p>}
           </div>
           {viewAllHref && (
