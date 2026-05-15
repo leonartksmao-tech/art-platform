@@ -135,27 +135,27 @@ export default function HomePage() {
       </Section>
 
       {/* Become Instructor */}
-      <section className="py-14 sm:py-20 bg-accent text-accent-foreground">
+      <section className="py-14 sm:py-20 bg-[#1a1a1a] text-white">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="text-4xl mb-4">🎓✨</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">成为 MaoArt 讲师</h2>
           <p className="text-white/70 mb-8 leading-relaxed max-w-lg mx-auto">
             你是美术老师、绘本作者、AI 创作者？来这里分享你的作品和教学理念，一起打造 AI 时代的美育社区。
           </p>
-          <div className="flex flex-wrap gap-4 justify-center text-sm text-white/60 mb-8">
+          <div className="flex flex-wrap gap-4 justify-center text-sm text-white/50 mb-8">
             <span>🎨 展示个人作品</span>
             <span>📖 发布教学内容</span>
             <span>🤖 AI 创作经验</span>
             <span>👨‍👩‍👧 连接学员家长</span>
           </div>
-          <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-accent" asChild>
+          <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-[#1a1a1a]" asChild>
             <Link href="/teach">了解详情 →</Link>
           </Button>
         </div>
       </section>
 
       {/* Contact / Community */}
-      <section className="py-14 sm:py-20 bg-background">
+      <section className="py-14 sm:py-20 bg-muted">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="text-4xl mb-4">💬</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">加入我们的社群</h2>
