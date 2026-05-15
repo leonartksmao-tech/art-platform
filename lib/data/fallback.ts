@@ -150,15 +150,60 @@ export const FALLBACK_WORKS = [
 ];
 
 export const FALLBACK_SKILL_CARDS = [
-  { name: "图形概括力", rarity: "COMMON" as const, image: "/skills/shape-generalization.jpg", description: "万事万物都可还原为基本图形" },
-  { name: "线条表达力", rarity: "COMMON" as const, image: "/skills/line-expression.jpg", description: "用线条的粗细、疏密、曲直来表达情感" },
-  { name: "色彩叙事力", rarity: "RARE" as const, image: "/skills/line-application.jpg", description: "从冷到暖、从地心到宇宙的色彩光谱" },
-  { name: "空间表达力", rarity: "RARE" as const, image: "/skills/spatial-expression.jpg", description: "建立近大远小、前后遮挡的空间意识" },
-  { name: "结构思维", rarity: "RARE" as const, image: "/skills/occlusion-relationship.jpg", description: "用关节和比例解构复杂人体与遮挡关系" },
-  { name: "人物塑造力", rarity: "EPIC" as const, image: "/skills/figure-motion.jpg", description: "从性格出发设计角色外观与动态" },
-  { name: "拼贴创作力", rarity: "EPIC" as const, image: "/skills/collage-making.jpg", description: "组合多元材料创造新的视觉叙事" },
-  { name: "图案设计力", rarity: "EPIC" as const, image: "/skills/tile-continuity.jpg", description: "理解重复、镜像、旋转的装饰规律" },
-  { name: "贴纸包装设计", rarity: "EPIC" as const, image: "/skills/sticker-packaging.jpg", description: "把图形概括应用到产品设计中" },
-  { name: "设计原理", rarity: "LEGENDARY" as const, image: "/skills/design-basics.jpg", description: "掌握设计的基本理论和美学原则" },
-  { name: "综合创作力", rarity: "LEGENDARY" as const, image: "/skills/design-fundamentals.jpg", description: "把全部技能整合成完整的个人作品" },
+  // 基础课卡牌 — COMMON
+  { name: "图形概括", rarity: "COMMON" as const, image: "/skills/图形概括.jpg", description: "万事万物都可还原为基本图形" },
+  { name: "形状概括", rarity: "COMMON" as const, image: "/skills/形状概括.jpg", description: "用基础形状拆解复杂物体" },
+  { name: "线条", rarity: "COMMON" as const, image: "/skills/线条.jpg", description: "用线条的粗细、疏密、曲直表达情感" },
+  { name: "遮挡关系卡片", rarity: "COMMON" as const, image: "/skills/遮挡关系卡片.jpg", description: "理解物体之间的前后关系和空间层次" },
+  { name: "人物动态", rarity: "COMMON" as const, image: "/skills/人物动态.jpg", description: "捕捉人体运动中的动态韵律" },
+  // 基础课卡牌 — RARE
+  { name: "空间表达卡片", rarity: "RARE" as const, image: "/skills/空间表达卡片.jpg", description: "建立近大远小、前后遮挡的空间意识" },
+  { name: "线条的应用", rarity: "RARE" as const, image: "/skills/线条的应用.jpg", description: "掌控线条的方向、节奏和表现力" },
+  { name: "颜色概括", rarity: "RARE" as const, image: "/skills/颜色概括.jpg", description: "从冷到暖、从地心到宇宙的色彩光谱" },
+  { name: "装饰线条", rarity: "RARE" as const, image: "/skills/装饰线条.jpg", description: "用装饰性线条丰富画面细节" },
+  { name: "贴纸包装设计", rarity: "RARE" as const, image: "/skills/贴纸包装设计.jpg", description: "把图形概括应用到产品设计中" },
+  // 基础课卡牌 — EPIC
+  { name: "制作拼贴画", rarity: "EPIC" as const, image: "/skills/制作拼贴画.jpg", description: "组合多元材料创造新的视觉叙事" },
+  { name: "四方连续", rarity: "EPIC" as const, image: "/skills/四方连续.jpg", description: "理解重复、镜像、旋转的装饰规律" },
+  // 基础课卡牌 — LEGENDARY
+  { name: "设计基本理论", rarity: "LEGENDARY" as const, image: "/skills/设计基本理论.jpg", description: "掌握设计的基本理论和美学原则" },
+  // 创作课卡牌 — COMMON
+  { name: "五官定位", rarity: "COMMON" as const, image: "/skills/五官定位.jpg", description: "准确捕捉面部五官的比例和位置" },
+  { name: "面部特点绘制", rarity: "COMMON" as const, image: "/skills/面部特点绘制.jpg", description: "观察并绘制不同人物的面部特征" },
+  // 创作课卡牌 — RARE
+  { name: "图形符号化", rarity: "RARE" as const, image: "/skills/图形符号化.jpg", description: "将复杂图形提炼为简洁符号" },
+  { name: "表情特征绘制", rarity: "RARE" as const, image: "/skills/表情特征绘制.jpg", description: "通过五官变化传达角色情绪" },
+  { name: "房屋绘制", rarity: "RARE" as const, image: "/skills/房屋绘制.jpg", description: "从几何体出发构建建筑空间" },
+  { name: "成组表现法", rarity: "RARE" as const, image: "/skills/成组表现法.jpg", description: "用分组技法表现复杂场景中的多元素" },
+  { name: "水彩工具", rarity: "RARE" as const, image: "/skills/水彩工具.jpg", description: "掌握水彩工具的特性和表现技法" },
+  // 创作课卡牌 — EPIC
+  { name: "人物动态塑造", rarity: "EPIC" as const, image: "/skills/人物动态塑造.jpg", description: "从动作到情绪，塑造有生命力的人物" },
+  { name: "角色设计", rarity: "EPIC" as const, image: "/skills/角色设计.jpg", description: "从性格出发设计完整的角色形象" },
+  { name: "场景构建", rarity: "EPIC" as const, image: "/skills/场景构建.jpg", description: "设计完整的空间场景和故事环境" },
+  { name: "学习昆虫的构造", rarity: "EPIC" as const, image: "/skills/学习昆虫的构造.jpg", description: "观察昆虫结构，掌握生物绘画基础" },
+  { name: "用昆虫讲故事", rarity: "EPIC" as const, image: "/skills/用昆虫讲故事.jpg", description: "以昆虫为主角创作有趣的视觉叙事" },
+  { name: "建筑群体的绘画", rarity: "EPIC" as const, image: "/skills/建筑群体的绘画.jpg", description: "理解建筑透视和群体空间关系" },
+  { name: "微观视角", rarity: "EPIC" as const, image: "/skills/微观视角.jpg", description: "从放大镜般的视角发现细微之美" },
+  { name: "借物变变变", rarity: "EPIC" as const, image: "/skills/借物变变变.jpg", description: "通过联想将日常物品变成创意形象" },
+  { name: "画马", rarity: "EPIC" as const, image: "/skills/画马.jpg", description: "拆解马的解剖结构，掌握动物绘画技法" },
+  { name: "风的逻辑", rarity: "EPIC" as const, image: "/skills/风的逻辑.jpg", description: "感受并表现自然力量的运动规律" },
+  { name: "制作豆豆本", rarity: "EPIC" as const, image: "/skills/制作豆豆本.jpg", description: "亲手制作迷你豆豆书，体验书籍设计" },
+  { name: "逛街人物的绘画", rarity: "EPIC" as const, image: "/skills/逛街人物的绘画.jpg", description: "捕捉日常场景中的动态人物" },
+  // 创作课卡牌 — LEGENDARY
+  { name: "设计的基本理论", rarity: "LEGENDARY" as const, image: "/skills/设计的基本理论.jpg", description: "设计理论与美学原则的综合应用" },
+  { name: "综合材料的运用", rarity: "LEGENDARY" as const, image: "/skills/综合材料的运用.jpg", description: "把全部技能整合成完整的个人作品" },
+  // 综合创作练习卡
+  { name: "综合练习 1", rarity: "RARE" as const, image: "/skills/组-1.jpg", description: "综合创作练习卡" },
+  { name: "综合练习 2", rarity: "RARE" as const, image: "/skills/组-1-拷贝.jpg", description: "综合创作练习卡" },
+  { name: "综合练习 3", rarity: "RARE" as const, image: "/skills/组-1-拷贝-2.jpg", description: "综合创作练习卡" },
+  { name: "综合练习 4", rarity: "RARE" as const, image: "/skills/组-1-拷贝-3.jpg", description: "综合创作练习卡" },
+  { name: "综合练习 5", rarity: "RARE" as const, image: "/skills/组-1-拷贝-4.jpg", description: "综合创作练习卡" },
+  { name: "综合练习 6", rarity: "RARE" as const, image: "/skills/组-1-拷贝-5.jpg", description: "综合创作练习卡" },
+  { name: "综合练习 7", rarity: "RARE" as const, image: "/skills/组-1-拷贝-6.jpg", description: "综合创作练习卡" },
+  // 额外卡牌
+  { name: "线条练习 2", rarity: "COMMON" as const, image: "/skills/2.jpg", description: "基础绘画练习卡" },
+  { name: "线条练习 3", rarity: "COMMON" as const, image: "/skills/3.jpg", description: "进阶绘画练习卡" },
+  { name: "线条变体", rarity: "COMMON" as const, image: "/skills/线条-拷贝.jpg", description: "线条表达的多种变体练习" },
+  { name: "设计理论进阶", rarity: "LEGENDARY" as const, image: "/skills/设计的基本理论-拷贝.jpg", description: "设计理论的深化与拓展" },
+  { name: "设计理论高阶", rarity: "LEGENDARY" as const, image: "/skills/设计的基本理论-拷贝-4.jpg", description: "设计理论的高阶应用" },
 ];
