@@ -56,14 +56,22 @@ export default function TeachPage() {
       {/* CTA */}
       <section className="py-14 sm:py-20 bg-background">
         <div className="mx-auto max-w-xl px-6 text-center">
-          <p className="text-4xl mb-4">📬</p>
-          <h2 className="text-2xl font-extrabold tracking-tight mb-3">申请加入</h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            发送邮件到 <span className="font-semibold text-foreground">maoart@maoart.online</span>，附上你的个人介绍和作品链接，我们会在 3 个工作日内回复。
+          <p className="text-4xl mb-4">💬</p>
+          <h2 className="text-2xl font-extrabold tracking-tight mb-3">加入社群</h2>
+          <p className="text-muted-foreground mb-4 leading-relaxed">
+            扫码加入「央美猫猫老师绘本 AI 创作营」微信群，直接交流。
           </p>
-          <Button size="lg" className="bg-primary hover:bg-[#d04a40]" asChild>
-            <Link href="mailto:maoart@maoart.online">发送申请邮件 →</Link>
-          </Button>
+          <div className="flex justify-center mb-6">
+            <div className="card-sketch bg-card p-3 w-44 h-44 flex items-center justify-center">
+              <img src="/qrcode.jpg" alt="微信群二维码" className="w-full h-full object-contain" />
+            </div>
+          </div>
+          <p className="text-xs text-muted-foreground mb-6">
+            群聊：央美猫猫老师绘本 AI 创作营
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            或发送邮件至 <span className="font-semibold text-foreground">maoart@maoart.online</span>
+          </p>
         </div>
       </section>
     </div>

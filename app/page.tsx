@@ -153,6 +153,25 @@ export default function HomePage() {
           </Button>
         </div>
       </section>
+
+      {/* Contact / Community */}
+      <section className="py-14 sm:py-20 bg-background">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <p className="text-4xl mb-4">💬</p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">加入我们的社群</h2>
+          <p className="text-muted-foreground mb-6 leading-relaxed max-w-lg mx-auto">
+            微信扫码加入「央美猫猫老师绘本 AI 创作营」，和更多创作者一起交流 AI 美育。
+          </p>
+          <div className="flex justify-center mb-6">
+            <div className="card-sketch bg-card p-3 w-48 h-48 flex items-center justify-center">
+              <img src="/qrcode.jpg" alt="微信群二维码" className="w-full h-full object-contain" />
+            </div>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            群聊：央美猫猫老师绘本 AI 创作营
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
