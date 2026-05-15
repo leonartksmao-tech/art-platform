@@ -95,11 +95,16 @@ export default {
   },
 };
 
-// 将 base64 data URL 解码为 Uint8Array
+// 将 base64 data URL 解码为 Uint8Array（逐字节处理，避免大文件调用栈溢出）
 function dataUrlToBytes(dataUrl) {
   const match = dataUrl.match(/^data:(image\/\w+);base64,(.+)$/);
   if (!match) return null;
-  return { mimeType: match[1], bytes: Uint8Array.from(atob(match[2]), (c) => c.charCodeAt(0)) };
+  const binary = atob(match[2]);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return { mimeType: match[1], bytes };
 }
 
 // 上传图片到 ComfyUI input 目录（通过 Tunnel）
@@ -196,11 +201,14 @@ async function handleGenerate(request, env) {
   }
 
   // 1. 上传模特图和服装图到 ComfyUI input 目录
+  const MAX_IMAGE = 10 * 1024 * 1024; // 10MB base64
   const uploads = [];
   if (modelImage) {
+    if (modelImage.length > MAX_IMAGE * 1.4) throw new Error("模特图过大，请压缩后重试");
     uploads.push(uploadToComfyUI(comfyuiUrl, modelImage, `model_${Date.now()}.png`));
   }
   if (clothingImage) {
+    if (clothingImage.length > MAX_IMAGE * 1.4) throw new Error("服装图过大，请压缩后重试");
     uploads.push(uploadToComfyUI(comfyuiUrl, clothingImage, `clothing_${Date.now()}.png`));
   }
   const results = await Promise.all(uploads);

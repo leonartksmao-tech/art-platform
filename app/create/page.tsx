@@ -37,16 +37,23 @@ function CreatePageInner() {
   const handleFile = useCallback(
     (file: File, setter: typeof setModelImg) => {
       if (!file.type.startsWith("image/")) return;
+      if (file.size > 10 * 1024 * 1024) {
+        setError("图片不能超过 10MB");
+        return;
+      }
       setter({ file, preview: URL.createObjectURL(file) });
       setError("");
     },
     []
   );
 
-  const fileToBase64 = async (file: File): Promise<string> => {
-    const buf = await file.arrayBuffer();
-    const b64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
-    return `data:${file.type};base64,${b64}`;
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
   };
 
   const handleGenerate = async () => {
