@@ -63,7 +63,7 @@ export default function TeachPage() {
           </p>
           <div className="flex justify-center mb-6">
             <div className="card-sketch bg-card p-4 w-52 h-52 sm:w-60 sm:h-60 flex items-center justify-center">
-              <img src="/qrcode-cropped.jpg" alt="微信群二维码" className="w-full h-full object-contain" />
+              <img src="/qrcode-new.jpg" alt="微信群二维码" className="w-full h-full object-contain" />
             </div>
           </div>
           <p className="text-xs text-muted-foreground mb-6">

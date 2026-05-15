@@ -180,7 +180,7 @@ export default function HomePage() {
           </p>
           <div className="flex justify-center mb-6">
             <div className="card-sketch bg-card p-4 w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center">
-              <img src="/qrcode-cropped.jpg" alt="微信群二维码" className="w-full h-full object-contain" />
+              <img src="/qrcode-new.jpg" alt="微信群二维码" className="w-full h-full object-contain" />
             </div>
           </div>
           <p className="text-xs text-muted-foreground">
