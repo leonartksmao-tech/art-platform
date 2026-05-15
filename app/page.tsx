@@ -8,6 +8,8 @@ import { WorkCard } from "@/components/work-card";
 import { SkillCardMini } from "@/components/skill-card-mini";
 import { FALLBACK_COURSES, FALLBACK_TEACHER_WORKS, FALLBACK_SKILL_CARDS } from "@/lib/data/fallback";
 import { assetUrl } from "@/lib/utils";
+import { ClassroomGallery } from "@/components/classroom-gallery";
+import { CLASSROOM_PHOTOS } from "@/lib/data/classroom-photos";
 
 export default function HomePage() {
   const displaySkills = FALLBACK_SKILL_CARDS;
@@ -151,6 +153,20 @@ export default function HomePage() {
           <Button size="lg" className="bg-white text-[#1a1a1a] hover:bg-white/90 font-semibold" asChild>
             <Link href="/teach">了解详情 →</Link>
           </Button>
+        </div>
+      </section>
+
+      {/* Classroom Gallery */}
+      <section className="py-14 sm:py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className="text-4xl mb-4 text-center">🏫</p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3 text-center">
+            猫猫老师线下课堂
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed max-w-lg mx-auto text-center">
+            课堂实录 — 孩子们在创作中的专注、好奇与快乐。
+          </p>
+          <ClassroomGallery photos={CLASSROOM_PHOTOS} />
         </div>
       </section>
 
