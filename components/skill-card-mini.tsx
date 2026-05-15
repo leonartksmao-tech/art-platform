@@ -24,17 +24,24 @@ const rarityEmoji: Record<string, string> = {
 };
 
 const rarityBadgeColor: Record<string, string> = {
-  COMMON: "bg-gray-100 text-gray-600",
-  RARE: "bg-blue-100 text-blue-600",
-  EPIC: "bg-purple-100 text-purple-600",
-  LEGENDARY: "bg-amber-100 text-amber-700",
+  COMMON: "bg-gradient-to-r from-gray-300 to-gray-400 text-white shadow-sm",
+  RARE: "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-md shadow-blue-500/30",
+  EPIC: "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-md shadow-purple-500/30",
+  LEGENDARY: "bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-lg shadow-amber-400/40 animate-pulse",
 };
 
 const rarityBorder: Record<string, string> = {
-  COMMON: "border-[#c0c5cc]",
-  RARE: "border-blue-400",
-  EPIC: "border-purple-400",
-  LEGENDARY: "border-amber-400",
+  COMMON: "border-gray-300",
+  RARE: "border-blue-400 shadow-lg shadow-blue-500/15",
+  EPIC: "border-purple-400 shadow-lg shadow-purple-500/20",
+  LEGENDARY: "border-amber-400 shadow-xl shadow-amber-400/25 ring-1 ring-amber-300/50",
+};
+
+const rarityGlow: Record<string, string> = {
+  COMMON: "",
+  RARE: "bg-gradient-to-t from-blue-50 to-transparent",
+  EPIC: "bg-gradient-to-t from-purple-50 to-transparent",
+  LEGENDARY: "bg-gradient-to-t from-amber-100 to-transparent",
 };
 
 export function SkillCardMini({ name, rarity, description, unlocked = true, image }: SkillCardMiniProps) {
@@ -42,7 +49,7 @@ export function SkillCardMini({ name, rarity, description, unlocked = true, imag
     return (
       <div className={`card-sketch overflow-hidden border-2 transition-all hover:-translate-y-0.5 ${
         unlocked ? rarityBorder[rarity] ?? rarityBorder.COMMON : "border-border opacity-50 grayscale"
-      }`}>
+      } ${unlocked ? rarityGlow[rarity] : ""}`}>
         <div className="aspect-[3/4] relative bg-muted">
           <Image src={assetUrl(image)} alt={name} fill sizes="25vw" className="object-cover img-bright" />
           {/* 稀有度图标 */}
@@ -62,13 +69,13 @@ export function SkillCardMini({ name, rarity, description, unlocked = true, imag
 
   return (
     <div
-      className={`rounded-xl border p-4 text-center transition-all ${
+      className={`rounded-xl border-2 p-4 text-center transition-all ${
         unlocked
           ? {
-              COMMON: "border-[#d1d5db] bg-white shadow-sm",
-              RARE: "border-blue-200 bg-blue-50 text-blue-700",
-              EPIC: "border-purple-200 bg-purple-50 text-purple-700",
-              LEGENDARY: "border-amber-200 bg-amber-50 text-amber-700",
+              COMMON: "border-gray-300 bg-white shadow-sm",
+              RARE: "border-blue-400 bg-gradient-to-b from-blue-50 to-white shadow-lg shadow-blue-400/20",
+              EPIC: "border-purple-400 bg-gradient-to-b from-purple-50 to-white shadow-lg shadow-purple-400/20",
+              LEGENDARY: "border-amber-400 bg-gradient-to-b from-amber-50 to-white shadow-xl shadow-amber-400/30 ring-1 ring-amber-300/50 animate-pulse",
             }[rarity] ?? "border-border bg-muted"
           : "border-border bg-muted/50 opacity-60 grayscale"
       }`}
