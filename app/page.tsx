@@ -75,7 +75,7 @@ export default function HomePage() {
       </Section>
 
       {/* Skill Cards */}
-      <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，21 张卡牌见证成长" viewAllHref="/profile/skills">
+      <Section title="技能卡牌收集" subtitle="每节课解锁一张卡牌，48 张卡牌见证成长" viewAllHref="/profile/skills">
         <div className="flex lg:grid lg:grid-cols-4 gap-3 overflow-x-auto lg:overflow-visible pb-2 snap-x lg:snap-none snap-mandatory no-scrollbar">
           {displaySkills.map((skill) => (
             <div key={skill.name} className="w-[240px] lg:w-auto shrink-0 snap-start">
