@@ -1,6 +1,9 @@
+import { AuthGuard } from "@/components/auth-guard";
+
 export default function CreatePage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 text-center">
+    <AuthGuard>
+      <div className="mx-auto max-w-3xl px-4 py-12 text-center">
       <div className="text-6xl mb-6">🤖✨</div>
       <h1 className="text-2xl font-bold mb-4">
         <span className="sketch-title-underline">AI 生图功能即将上线</span>
@@ -19,6 +22,7 @@ export default function CreatePage() {
           <p>💾 保存到作品库</p>
         </div>
       </div>
-    </div>
+      </div>
+    </AuthGuard>
   );
 }

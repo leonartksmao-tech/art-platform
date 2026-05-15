@@ -27,13 +27,7 @@ export default function AuthPage() {
       options: { data: { nickname } },
     });
     if (signUpError) { setError(signUpError.message); setLoading(false); return; }
-    if (data.user) {
-      await fetch("/api/profile", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId: data.user.id, nickname }),
-      });
-    }
+    // profile 由数据库触发器自动创建，无需手动插入
     router.push("/courses");
     router.refresh();
   };

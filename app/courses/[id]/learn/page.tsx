@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { FALLBACK_COURSES } from "@/lib/data/fallback";
 import { LearnPageClient } from "./LearnPageClient";
+import { AuthGuard } from "@/components/auth-guard";
 
 export function generateStaticParams() {
   return FALLBACK_COURSES.map((c) => ({ id: c.id }));
@@ -8,8 +9,10 @@ export function generateStaticParams() {
 
 export default function LearnPage() {
   return (
-    <Suspense fallback={<div className="mx-auto max-w-3xl px-4 py-16 text-center text-muted-foreground">加载中...</div>}>
-      <LearnPageClient />
-    </Suspense>
+    <AuthGuard>
+      <Suspense fallback={<div className="mx-auto max-w-3xl px-4 py-16 text-center text-muted-foreground">加载中...</div>}>
+        <LearnPageClient />
+      </Suspense>
+    </AuthGuard>
   );
 }
